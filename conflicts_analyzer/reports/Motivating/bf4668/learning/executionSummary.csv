@@ -1,0 +1,2 @@
+Method; Precision; Exceptions; SdgCreated; CgNodes; CgEdges; SdgNodes; SdgEdges; Time (ms); Memory (M); HasSourcedAndSink; HasLeftToRightVio; HasRightToLeftVio; TotalVios; InstVios; LineVios; DetailedLineVios; Left; Right
+void main.Main.main(String[] args); INSTANCE_BASED; Yes; Yes; 36; 45; 2082; 19499; 7024; 461; No; -; -; -; -; -; -; [18, 19, 20]; [21, 22]

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <!-- This module was also published with a richer model, Gradle metadata,  -->
+    <!-- which should be used instead. Do not delete the following line which  -->
+    <!-- is to indicate to Gradle or any Gradle module metadata file consumer  -->
+    <!-- that they should prefer consuming it instead. -->
+    <!-- do_not_remove: published-with-gradle-metadata -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ibm.wala</groupId>
+    <artifactId>com.ibm.wala.util</artifactId>
+    <version>1.6.3</version>
+    <name>WALA Util</name>
+    <description>T. J. Watson Libraries for Analysis</description>
+    <url>https://github.com/wala/WALA</url>
+    <inceptionYear>2006</inceptionYear>
+    <licenses>
+        <license>
+            <name>Eclipse Public License v2.0</name>
+            <url>https://github.com/wala/WALA/blob/master/LICENSE</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>juliandolby</id>
+            <name>Julian Dolby</name>
+            <url>https://github.com/{juliandolby=Julian Dolby.key}</url>
+        </developer>
+        <developer>
+            <id>liblit</id>
+            <name>Ben Liblit</name>
+            <url>https://github.com/{liblit=Ben Liblit.key}</url>
+        </developer>
+        <developer>
+            <id>msridhar</id>
+            <name>Manu Sridharan</name>
+            <url>https://github.com/{msridhar=Manu Sridharan.key}</url>
+        </developer>
+        <developer>
+            <id>sjfink</id>
+            <name>Stephen Fink</name>
+            <url>https://github.com/{sjfink=Stephen Fink.key}</url>
+        </developer>
+    </developers>
+    <mailingLists>
+        <mailingList>
+            <name>wala-commits</name>
+            <subscribe>https://sourceforge.net/projects/wala/lists/wala-commits</subscribe>
+            <unsubscribe>https://sourceforge.net/projects/wala/lists/wala-commits/unsubscribe</unsubscribe>
+            <post>wala-commits@lists.sourceforge.net</post>
+            <archive>https://sourceforge.net/p/wala/mailman/wala-commits</archive>
+        </mailingList>
+        <mailingList>
+            <name>wala-wala</name>
+            <subscribe>https://sourceforge.net/projects/wala/lists/wala-wala</subscribe>
+            <unsubscribe>https://sourceforge.net/projects/wala/lists/wala-wala/unsubscribe</unsubscribe>
+            <post>wala-wala@lists.sourceforge.net</post>
+            <archive>https://sourceforge.net/p/wala/mailman/wala-wala</archive>
+        </mailingList>
+    </mailingLists>
+    <scm>
+        <connection>scm:git:git://github.com/wala/WALA.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/wala/WALA.git</developerConnection>
+        <url>https://github.com/wala/WALA</url>
+    </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/wala/WALA/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>GitHub Actions</system>
+        <url>https://github.com/wala/WALA/actions</url>
+    </ciManagement>
+</project>
