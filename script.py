@@ -269,11 +269,11 @@ def runJoanaForSpecificRevs():
 		print "\n\nREV ", revStr
 		REV_REPORTS_PATH = PROJECT_REPORTS_PATH + "/" + revStr
 		REV_SDGS_PATH = PROJECT_SDGS_PATH + "/" + revStr
-		libStr = "/media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/libs/"
+		libStr = "/home/joana_execution/libs/"
 		# if(len(revLineSplitted) >= 3):
 			# libStr = revLineSplitted[2].strip()
 		print "\n\nGIT", REV_GIT_PATH, "\n\nREV_REPORTS", REV_REPORTS_PATH, "\n\nSDG", REV_SDGS_PATH, "\n\nRevContrib", revContribs, "\n\nHeapSTR", heapStr, "\n\nLibSTR", libStr
-		run_joana("/media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/", REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapStr, libStr)
+		run_joana("/home/joana_execution/", REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapStr, libStr)
 
 def main():
 	build_all = True

@@ -182,9 +182,9 @@ public class FileUtils {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		String[] res = getAllJarFiles("/media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/target/dependency",
-				"/media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/target/dependency:"
-				+ "/media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/lib");
+		String[] res = getAllJarFiles("/home/joana_execution/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/target/dependency",
+				"/home/joana_execution/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/target/dependency:"
+				+ "/home/joana_execution/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/lib");
 		
 		
 		for(String str : res)
