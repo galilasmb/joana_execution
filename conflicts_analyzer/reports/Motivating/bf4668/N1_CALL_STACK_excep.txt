@@ -1,0 +1,10 @@
+Creating SDG...
+SDG: 1384 nodes and 9441 edges
+
+
+ANALYSIS
+Method: void main.Main.main(String[][][])
+0 SOURCES AND/OR SINKS
+
+NO FLOW FROM LEFT TO RIGHT OR RIGHT TO LEFT!
+NO FLOW FROM LEFT AND RIGHT TO A THIRD POINT!

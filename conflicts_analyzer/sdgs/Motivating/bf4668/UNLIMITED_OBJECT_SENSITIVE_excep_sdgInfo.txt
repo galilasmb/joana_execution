@@ -1,0 +1,2 @@
+Method; CGNodes; CGEdges; Time; Memory; LeftIndexes; RightIndexes; BytecodeToLine
+-; 84; 97; 1421829; 890; -; -; -

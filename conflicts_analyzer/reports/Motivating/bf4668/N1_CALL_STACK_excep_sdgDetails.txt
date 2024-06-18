@@ -1,0 +1,316 @@
+Setting up analysis scope... (from file /home/joana_execution/joana.contrib.lib/stubs/jSDG-stubs-jre1.5.jar) done.
+Creating class hierarchy... (18317 classes) done.
+Setting up entrypoints... Setting up entrypoint main.Main.main([[[LString;)V... done.
+Building system dependence graph... 
+	callgraph: 38 nodes and 45 edges
+	interproc exception analysis... 	intraproc: calls.mergeable..clinit.statics.heap(if,adj,df,reg).misc.killdef.convert.summary..
+done.
+Time needed: 39271ms - Memory: 994M used.
+SDG INFO
+java.lang.StringBuilder
+    Attributes: 0
+    Methods: 3
+        java.lang.StringBuilder java.lang.StringBuilder.append(java.lang.String) - Instructions: 2
+            LINE 120: (java.lang.StringBuilder java.lang.StringBuilder.append(java.lang.String):2) v5 = this.append(p1)
+            LINE 121: (java.lang.StringBuilder java.lang.StringBuilder.append(java.lang.String):7) return this
+        java.lang.String java.lang.StringBuilder.toString() - Instructions: 5
+            LINE 431: (java.lang.String java.lang.StringBuilder.toString():0) v3 = new java.lang.String
+            LINE 431: (java.lang.String java.lang.StringBuilder.toString():5) v4 = this.value
+            LINE 431: (java.lang.String java.lang.StringBuilder.toString():10) v6 = this.count
+            LINE 431: (java.lang.String java.lang.StringBuilder.toString():13) v3.<init>(v4, #(0), v6)
+            LINE 431: (java.lang.String java.lang.StringBuilder.toString():16) return v3
+        void java.lang.StringBuilder.<init>() - Instructions: 2
+            LINE 69: (void java.lang.StringBuilder.<init>():3) this.<init>(#(16))
+            LINE 70: (void java.lang.StringBuilder.<init>():6) return
+java.util.HashMap
+    Attributes: 1
+        java.util.HashMap$Entry[] table
+    Methods: 2
+        void java.util.HashMap.<init>(int) - Instructions: 2
+            LINE 193: (void java.util.HashMap.<init>(int):4) this.<init>(p1, #(0.75 f))
+            LINE 194: (void java.util.HashMap.<init>(int):7) return
+        boolean java.util.HashMap.containsKey(java.lang.Object) - Instructions: 18
+            LINE 376: (boolean java.util.HashMap.containsKey(java.lang.Object):1) v5 = maskNull(p1)
+            LINE 377: (boolean java.util.HashMap.containsKey(java.lang.Object):6) v7 = v5.hashCode()
+            LINE 377: (boolean java.util.HashMap.containsKey(java.lang.Object):9) v9 = hash(v7)
+            LINE 378: (boolean java.util.HashMap.containsKey(java.lang.Object):15) v10 = this.table
+            LINE 378: (boolean java.util.HashMap.containsKey(java.lang.Object):18) v11 = v10.length
+            LINE 378: (boolean java.util.HashMap.containsKey(java.lang.Object):19) v13 = indexFor(v9, v11)
+            LINE 379: (boolean java.util.HashMap.containsKey(java.lang.Object):25) v14 = this.table
+            LINE 379: (boolean java.util.HashMap.containsKey(java.lang.Object):30) v15 = v14[v13]
+            LINE 380: (boolean java.util.HashMap.containsKey(java.lang.Object):33) goto 68
+            LINE 381: (boolean java.util.HashMap.containsKey(java.lang.Object):38) v17 = v23.hash
+            LINE 381: (boolean java.util.HashMap.containsKey(java.lang.Object):42) if (v17 != v9) goto 61
+            LINE 381: (boolean java.util.HashMap.containsKey(java.lang.Object):48) v18 = v23.key
+            LINE 381: (boolean java.util.HashMap.containsKey(java.lang.Object):51) v20 = eq(v5, v18)
+            LINE 381: (boolean java.util.HashMap.containsKey(java.lang.Object):54) if (v20 == #(0)) goto 61
+            LINE 382: (boolean java.util.HashMap.containsKey(java.lang.Object):58) return #(1)
+            LINE 383: (boolean java.util.HashMap.containsKey(java.lang.Object):61) v22 = v23.next
+            LINE 380: (boolean java.util.HashMap.containsKey(java.lang.Object):68) if (v23 != #(null)) goto 38
+            LINE 385: (boolean java.util.HashMap.containsKey(java.lang.Object):72) return #(0)
+char[]
+    Attributes: 0
+    Methods: 0
+main.Main
+    Attributes: 1
+        java.util.List weaselWordsList
+    Methods: 5
+        java.lang.String main.Main.removeDuplicateWords(java.lang.String) - Instructions: 9
+            LINE 52: (java.lang.String main.Main.removeDuplicateWords(java.lang.String):10) v9 = asList(v7)
+            LINE 52: (java.lang.String main.Main.removeDuplicateWords(java.lang.String):13) v4.<init>(v9)
+            LINE 53: (java.lang.String main.Main.removeDuplicateWords(java.lang.String):18) v12 = v4.stream()
+            LINE 53: (java.lang.String main.Main.removeDuplicateWords(java.lang.String):25) v15 = joining(#( ))
+            LINE 53: (java.lang.String main.Main.removeDuplicateWords(java.lang.String):28) v17 = v12.collect(v15)
+            LINE 53: (java.lang.String main.Main.removeDuplicateWords(java.lang.String):33) v18 = CHECKCAST v17
+            LINE 53: (java.lang.String main.Main.removeDuplicateWords(java.lang.String):36) return v18
+            LINE 52: (java.lang.String main.Main.removeDuplicateWords(java.lang.String):0) v4 = new java.util.HashSet
+            LINE 52: (java.lang.String main.Main.removeDuplicateWords(java.lang.String):7) v7 = p1.split(#(\s+))
+        boolean main.Main.hasWeaselWords(java.lang.String) - Instructions: 13
+            LINE 35: (boolean main.Main.hasWeaselWords(java.lang.String):0) v4 = new java.util.HashSet
+            LINE 35: (boolean main.Main.hasWeaselWords(java.lang.String):5) v5 = this.weaselWordsList
+            LINE 35: (boolean main.Main.hasWeaselWords(java.lang.String):8) v4.<init>(v5)
+            LINE 36: (boolean main.Main.hasWeaselWords(java.lang.String):15) v9 = p1.split(#(\s+))
+            LINE 36: (boolean main.Main.hasWeaselWords(java.lang.String):20) v10 = v9.length
+            LINE 36: (boolean main.Main.hasWeaselWords(java.lang.String):30) if (v17 >= v10) goto 59
+            LINE 36: (boolean main.Main.hasWeaselWords(java.lang.String):36) v12 = v9[v17]
+            LINE 37: (boolean main.Main.hasWeaselWords(java.lang.String):42) v14 = v4.contains(v12)
+            LINE 37: (boolean main.Main.hasWeaselWords(java.lang.String):47) if (v14 == #(0)) goto 52
+            LINE 38: (boolean main.Main.hasWeaselWords(java.lang.String):51) return #(1)
+            LINE 36: (boolean main.Main.hasWeaselWords(java.lang.String):52) v16 = v17 + #(1)
+            LINE 36: (boolean main.Main.hasWeaselWords(java.lang.String):55) goto 30
+            LINE 41: (boolean main.Main.hasWeaselWords(java.lang.String):59) return #(0)
+        void main.Main.<init>() - Instructions: 30
+            LINE 8: (void main.Main.<init>():1) this.<init>()
+            LINE 10: (void main.Main.<init>():7) v5 = new java.lang.String[]
+            LINE 10: (void main.Main.<init>():14) v5[#(0)] = #(many)
+            LINE 10: (void main.Main.<init>():19) v5[#(1)] = #(various)
+            LINE 10: (void main.Main.<init>():24) v5[#(2)] = #(very)
+            LINE 10: (void main.Main.<init>():29) v5[#(3)] = #(fairly)
+            LINE 10: (void main.Main.<init>():34) v5[#(4)] = #(several)
+            LINE 10: (void main.Main.<init>():39) v5[#(5)] = #(extremely)
+            LINE 10: (void main.Main.<init>():45) v5[#(6)] = #(exceedingly)
+            LINE 10: (void main.Main.<init>():51) v5[#(7)] = #(quite)
+            LINE 10: (void main.Main.<init>():57) v5[#(8)] = #(remarkably)
+            LINE 10: (void main.Main.<init>():63) v5[#(9)] = #(few)
+            LINE 10: (void main.Main.<init>():69) v5[#(10)] = #(surprisingly)
+            LINE 10: (void main.Main.<init>():75) v5[#(11)] = #(mostly)
+            LINE 10: (void main.Main.<init>():81) v5[#(12)] = #(largely)
+            LINE 10: (void main.Main.<init>():87) v5[#(13)] = #(huge)
+            LINE 10: (void main.Main.<init>():93) v5[#(14)] = #(tiny)
+            LINE 10: (void main.Main.<init>():99) v5[#(15)] = #(is a number)
+            LINE 10: (void main.Main.<init>():105) v5[#(16)] = #(are a number)
+            LINE 10: (void main.Main.<init>():111) v5[#(17)] = #(excellent)
+            LINE 10: (void main.Main.<init>():117) v5[#(18)] = #(interestingly)
+            LINE 10: (void main.Main.<init>():123) v5[#(19)] = #(significantly)
+            LINE 10: (void main.Main.<init>():129) v5[#(20)] = #(substantially)
+            LINE 10: (void main.Main.<init>():135) v5[#(21)] = #(clearly)
+            LINE 10: (void main.Main.<init>():141) v5[#(22)] = #(vast)
+            LINE 10: (void main.Main.<init>():147) v5[#(23)] = #(relatively)
+            LINE 10: (void main.Main.<init>():153) v5[#(24)] = #(completely)
+            LINE 10: (void main.Main.<init>():154) v57 = asList(v5)
+            LINE 10: (void main.Main.<init>():157) this.weaselWordsList = v57
+            LINE 10: (void main.Main.<init>():160) return
+        void main.Main.main(java.lang.String[]) - Instructions: 8
+            LINE 18: (void main.Main.main(java.lang.String[]):0) v3 = new main.Main
+            LINE 18: (void main.Main.main(java.lang.String[]):4) v3.<init>()
+            LINE 20: (void main.Main.main(java.lang.String[]):12) if (#(Your text with weasel...) == #(null)) goto 25
+            LINE 20: (void main.Main.main(java.lang.String[]):17) v8 = v3.hasWeaselWords(#(Your text with weasel...))
+            LINE 20: (void main.Main.main(java.lang.String[]):20) if (v8 == #(0)) goto 35
+            LINE 21: (void main.Main.main(java.lang.String[]):25) v11 = v3.removeWeaselWords(#(Your text with weasel...))
+            LINE 22: (void main.Main.main(java.lang.String[]):31) v13 = v3.removeDuplicateWords(#(Your text with weasel...))
+            LINE 24: (void main.Main.main(java.lang.String[]):35) return
+        java.lang.String main.Main.removeWeaselWords(java.lang.String) - Instructions: 15
+            LINE 45: (java.lang.String main.Main.removeWeaselWords(java.lang.String):1) v4 = this.weaselWordsList
+            LINE 45: (java.lang.String main.Main.removeWeaselWords(java.lang.String):4) v6 = v4.iterator()
+            LINE 45: (java.lang.String main.Main.removeWeaselWords(java.lang.String):11) v8 = v6.hasNext()
+            LINE 45: (java.lang.String main.Main.removeWeaselWords(java.lang.String):16) if (v8 == #(0)) goto 64
+            LINE 45: (java.lang.String main.Main.removeWeaselWords(java.lang.String):20) v11 = v6.next()
+            LINE 45: (java.lang.String main.Main.removeWeaselWords(java.lang.String):25) v12 = CHECKCAST v11
+            LINE 46: (java.lang.String main.Main.removeWeaselWords(java.lang.String):30) v13 = new java.lang.StringBuilder
+            LINE 46: (java.lang.String main.Main.removeWeaselWords(java.lang.String):34) v13.<init>()
+            LINE 46: (java.lang.String main.Main.removeWeaselWords(java.lang.String):39) v17 = v13.append(#(\b))
+            LINE 46: (java.lang.String main.Main.removeWeaselWords(java.lang.String):43) v19 = v17.append(v12)
+            LINE 46: (java.lang.String main.Main.removeWeaselWords(java.lang.String):48) v21 = v19.append(#(\b))
+            LINE 46: (java.lang.String main.Main.removeWeaselWords(java.lang.String):51) v23 = v21.toString()
+            LINE 46: (java.lang.String main.Main.removeWeaselWords(java.lang.String):56) v26 = v27.replaceAll(v23, #())
+            LINE 47: (java.lang.String main.Main.removeWeaselWords(java.lang.String):60) goto 11
+            LINE 48: (java.lang.String main.Main.removeWeaselWords(java.lang.String):64) return v27
+java.lang.String[]
+    Attributes: 0
+    Methods: 0
+java.util.HashSet
+    Attributes: 1
+        java.util.HashMap map
+    Methods: 2
+        boolean java.util.HashSet.contains(java.lang.Object) - Instructions: 3
+            LINE 182: (boolean java.util.HashSet.contains(java.lang.Object):1) v4 = this.map
+            LINE 182: (boolean java.util.HashSet.contains(java.lang.Object):5) v6 = v4.containsKey(p1)
+            LINE 182: (boolean java.util.HashSet.contains(java.lang.Object):8) return v6
+        void java.util.HashSet.<init>(java.util.Collection) - Instructions: 12
+            LINE 98: (void java.util.HashSet.<init>(java.util.Collection):1) this.<init>()
+            LINE 99: (void java.util.HashSet.<init>(java.util.Collection):5) v5 = new java.util.HashMap
+            LINE 99: (void java.util.HashSet.<init>(java.util.Collection):10) v7 = p1.size()
+            LINE 99: (void java.util.HashSet.<init>(java.util.Collection):15) v8 = CONVERT I to F v7
+            LINE 99: (void java.util.HashSet.<init>(java.util.Collection):18) v10 = v8 / #(0.75 f)
+            LINE 99: (void java.util.HashSet.<init>(java.util.Collection):19) v11 = CONVERT F to I v10
+            LINE 99: (void java.util.HashSet.<init>(java.util.Collection):21) v13 = v11 + #(1)
+            LINE 99: (void java.util.HashSet.<init>(java.util.Collection):24) v16 = max(v13, #(16))
+            LINE 99: (void java.util.HashSet.<init>(java.util.Collection):27) v5.<init>(v16)
+            LINE 99: (void java.util.HashSet.<init>(java.util.Collection):30) this.map = v5
+            LINE 100: (void java.util.HashSet.<init>(java.util.Collection):35) v19 = this.addAll(p1)
+            LINE 101: (void java.util.HashSet.<init>(java.util.Collection):39) return
+java.util.Arrays
+    Attributes: 0
+    Methods: 1
+        java.util.List java.util.Arrays.asList(java.lang.Object[]) - Instructions: 3
+            LINE 2341: (java.util.List java.util.Arrays.asList(java.lang.Object[]):0) v3 = new java.util.Arrays$ArrayList
+            LINE 2341: (java.util.List java.util.Arrays.asList(java.lang.Object[]):5) v3.<init>(p1)
+            LINE 2341: (java.util.List java.util.Arrays.asList(java.lang.Object[]):8) return v3
+java.util.ConcurrentModificationException
+    Attributes: 0
+    Methods: 0
+java.lang.String
+    Attributes: 0
+    Methods: 3
+        java.lang.String[] java.lang.String.split(java.lang.String) - Instructions: 0
+        void java.lang.String.<init>(char[], int, int) - Instructions: 0
+        java.lang.String java.lang.String.replaceAll(java.lang.String, java.lang.String) - Instructions: 0
+java.util.AbstractCollection
+    Attributes: 0
+    Methods: 1
+        boolean java.util.AbstractCollection.addAll(java.util.Collection) - Instructions: 8
+            LINE 316: (boolean java.util.AbstractCollection.addAll(java.util.Collection):3) v6 = p1.iterator()
+            LINE 317: (boolean java.util.AbstractCollection.addAll(java.util.Collection):9) goto 28
+            LINE 318: (boolean java.util.AbstractCollection.addAll(java.util.Collection):14) v10 = v6.next()
+            LINE 318: (boolean java.util.AbstractCollection.addAll(java.util.Collection):19) v12 = this.add(v10)
+            LINE 318: (boolean java.util.AbstractCollection.addAll(java.util.Collection):22) if (v12 == #(0)) goto 28
+            LINE 317: (boolean java.util.AbstractCollection.addAll(java.util.Collection):28) v8 = v6.hasNext()
+            LINE 317: (boolean java.util.AbstractCollection.addAll(java.util.Collection):33) if (v8 != #(0)) goto 14
+            LINE 321: (boolean java.util.AbstractCollection.addAll(java.util.Collection):37) return v14
+java.util.AbstractList$Itr
+    Attributes: 4
+        int cursor
+        int expectedModCount
+        int lastRet
+        java.util.AbstractList this$0
+    Methods: 4
+        void java.util.AbstractList$Itr.checkForComodification() - Instructions: 8
+            LINE 448: (void java.util.AbstractList$Itr.checkForComodification():1) v3 = this.this$0
+            LINE 448: (void java.util.AbstractList$Itr.checkForComodification():4) v4 = v3.modCount
+            LINE 448: (void java.util.AbstractList$Itr.checkForComodification():8) v5 = this.expectedModCount
+            LINE 448: (void java.util.AbstractList$Itr.checkForComodification():11) if (v4 == v5) goto 22
+            LINE 449: (void java.util.AbstractList$Itr.checkForComodification():14) v6 = new java.util.ConcurrentModificationException
+            LINE 449: (void java.util.AbstractList$Itr.checkForComodification():18) v6.<init>()
+            LINE 449: (void java.util.AbstractList$Itr.checkForComodification():21) throw v6
+            LINE 450: (void java.util.AbstractList$Itr.checkForComodification():22) return
+        java.lang.Object java.util.AbstractList$Itr.next() - Instructions: 14
+            LINE 420: (java.lang.Object java.util.AbstractList$Itr.next():1) this.checkForComodification()
+            LINE 422: (java.lang.Object java.util.AbstractList$Itr.next():5) v4 = this.this$0
+            LINE 422: (java.lang.Object java.util.AbstractList$Itr.next():9) v5 = this.cursor
+            LINE 422: (java.lang.Object java.util.AbstractList$Itr.next():12) v7 = v4.get(v5)
+            LINE 423: (java.lang.Object java.util.AbstractList$Itr.next():19) v12 = this.cursor
+            LINE 423: (java.lang.Object java.util.AbstractList$Itr.next():24) v14 = v12 + #(1)
+            LINE 423: (java.lang.Object java.util.AbstractList$Itr.next():25) this.cursor = v14
+            LINE 423: (java.lang.Object java.util.AbstractList$Itr.next():28) this.lastRet = v12
+            LINE 424: (java.lang.Object java.util.AbstractList$Itr.next():32) return v7
+            LINE 426: (java.lang.Object java.util.AbstractList$Itr.next():35) this.checkForComodification()
+            LINE 427: (java.lang.Object java.util.AbstractList$Itr.next():38) v10 = new java.util.NoSuchElementException
+            LINE 427: (java.lang.Object java.util.AbstractList$Itr.next():42) v10.<init>()
+            LINE 427: (java.lang.Object java.util.AbstractList$Itr.next():45) throw v10
+            LINE 420: (java.lang.Object java.util.AbstractList$Itr.next():0) v8 = catch <exc>
+        boolean java.util.AbstractList$Itr.hasNext() - Instructions: 6
+            LINE 416: (boolean java.util.AbstractList$Itr.hasNext():1) v3 = this.cursor
+            LINE 416: (boolean java.util.AbstractList$Itr.hasNext():5) v4 = this.this$0
+            LINE 416: (boolean java.util.AbstractList$Itr.hasNext():8) v6 = v4.size()
+            LINE 416: (boolean java.util.AbstractList$Itr.hasNext():11) if (v3 == v6) goto 17
+            LINE 416: (boolean java.util.AbstractList$Itr.hasNext():15) return #(1)
+            LINE 416: (boolean java.util.AbstractList$Itr.hasNext():17) return #(0)
+        void java.util.AbstractList$Itr.<init>(java.util.AbstractList, java.util.AbstractList$Itr, java.util.AbstractList$Itr) - Instructions: 2
+            LINE 395: (void java.util.AbstractList$Itr.<init>(java.util.AbstractList, java.util.AbstractList$Itr, java.util.AbstractList$Itr):2) this.<init>(p1)
+            LINE 395: (void java.util.AbstractList$Itr.<init>(java.util.AbstractList, java.util.AbstractList$Itr, java.util.AbstractList$Itr):5) return
+java.util.NoSuchElementException
+    Attributes: 0
+    Methods: 1
+        void java.util.NoSuchElementException.<init>() - Instructions: 2
+            LINE 28: (void java.util.NoSuchElementException.<init>():1) this.<init>()
+            LINE 29: (void java.util.NoSuchElementException.<init>():4) return
+java.util.AbstractList
+    Attributes: 1
+        int modCount
+    Methods: 1
+        java.util.Iterator java.util.AbstractList.iterator() - Instructions: 3
+            LINE 337: (java.util.Iterator java.util.AbstractList.iterator():0) v3 = new java.util.AbstractList$Itr
+            LINE 337: (java.util.Iterator java.util.AbstractList.iterator():7) v3.<init>(this, #(null), #(null))
+            LINE 337: (java.util.Iterator java.util.AbstractList.iterator():10) return v3
+java.util.Arrays$ArrayList
+    Attributes: 1
+        java.lang.Object[] a
+    Methods: 3
+        void java.util.Arrays$ArrayList.<init>(java.lang.Object[]) - Instructions: 7
+            LINE 2354: (void java.util.Arrays$ArrayList.<init>(java.lang.Object[]):5) if (p1 != #(null)) goto 18
+            LINE 2355: (void java.util.Arrays$ArrayList.<init>(java.lang.Object[]):8) v6 = new java.lang.NullPointerException
+            LINE 2355: (void java.util.Arrays$ArrayList.<init>(java.lang.Object[]):12) v6.<init>()
+            LINE 2355: (void java.util.Arrays$ArrayList.<init>(java.lang.Object[]):15) throw v6
+            LINE 2356: (void java.util.Arrays$ArrayList.<init>(java.lang.Object[]):18) this.a = p1
+            LINE 2357: (void java.util.Arrays$ArrayList.<init>(java.lang.Object[]):21) return
+            LINE 2353: (void java.util.Arrays$ArrayList.<init>(java.lang.Object[]):1) this.<init>()
+        java.lang.Object java.util.Arrays$ArrayList.get(int) - Instructions: 3
+            LINE 2368: (java.lang.Object java.util.Arrays$ArrayList.get(int):1) v4 = this.a
+            LINE 2368: (java.lang.Object java.util.Arrays$ArrayList.get(int):5) v5 = v4[p1]
+            LINE 2368: (java.lang.Object java.util.Arrays$ArrayList.get(int):6) return v5
+        int java.util.Arrays$ArrayList.size() - Instructions: 3
+            LINE 2360: (int java.util.Arrays$ArrayList.size():4) v4 = v3.length
+            LINE 2360: (int java.util.Arrays$ArrayList.size():5) return v4
+            LINE 2360: (int java.util.Arrays$ArrayList.size():1) v3 = this.a
+com.ibm.wala.FakeRootClass
+    Attributes: 0
+    Methods: 1
+        void com.ibm.wala.FakeRootClass.fakeRootMethod() - Instructions: 0
+java.lang.AbstractStringBuilder
+    Attributes: 2
+        char[] value
+        int count
+    Methods: 2
+        java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String) - Instructions: 15
+            LINE 388: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):1) if (p1 != #(null)) goto 8
+            LINE 389: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):8) v8 = v6.length()
+            LINE 390: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):13) if (v8 != #(0)) goto 19
+            LINE 390: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):17) return this
+            LINE 391: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):19) v10 = this.count
+            LINE 391: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):23) v11 = v10 + v8
+            LINE 392: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):27) v12 = this.value
+            LINE 392: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):30) v13 = v12.length
+            LINE 392: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):31) if (v11 <= v13) goto 43
+            LINE 393: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):36) this.expandCapacity(v11)
+            LINE 394: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):43) v15 = this.value
+            LINE 394: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):47) v16 = this.count
+            LINE 394: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):50) v6.getChars(#(0), v8, v15, v16)
+            LINE 395: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):55) this.count = v11
+            LINE 396: (java.lang.AbstractStringBuilder java.lang.AbstractStringBuilder.append(java.lang.String):59) return this
+        void java.lang.AbstractStringBuilder.<init>(int) - Instructions: 4
+            LINE 43: (void java.lang.AbstractStringBuilder.<init>(int):1) this.<init>()
+            LINE 44: (void java.lang.AbstractStringBuilder.<init>(int):6) v5 = new []
+            LINE 44: (void java.lang.AbstractStringBuilder.<init>(int):8) this.value = v5
+            LINE 45: (void java.lang.AbstractStringBuilder.<init>(int):11) return
+java.util.AbstractSet
+    Attributes: 0
+    Methods: 1
+        void java.util.AbstractSet.<init>() - Instructions: 2
+            LINE 44: (void java.util.AbstractSet.<init>():1) this.<init>()
+            LINE 45: (void java.util.AbstractSet.<init>():4) return
+java.lang.Math
+    Attributes: 0
+    Methods: 1
+        int java.lang.Math.max(int, int) - Instructions: 3
+            LINE 783: (int java.lang.Math.max(int, int):2) if (p1 < p2) goto 10
+            LINE 783: (int java.lang.Math.max(int, int):6) goto 10
+            LINE 783: (int java.lang.Math.max(int, int):10) return v4
+java.lang.NullPointerException
+    Attributes: 0
+    Methods: 0
+java.util.HashMap$Entry
+    Attributes: 3
+        int hash
+        java.lang.Object key
+        java.util.HashMap$Entry next
+    Methods: 0
