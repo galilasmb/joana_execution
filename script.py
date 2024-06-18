@@ -221,10 +221,10 @@ def checkIfIsInYearRange(yearRange, revHasContrib, revContribs):
 	return isInYearRange
 
 def getHeapComplement(path):
-	if path[:27] == "/home/local/CIN/rsmbf/rsmbf":
-		comp = "-Xms80g -Xmx120g"#"-Xms128g -Xmx192g"
+	if path[:27] == "/home/joana_execution/":
+		comp = "-Xms220g -Xmx520g"#"-Xms128g -Xmx192g"
 	else:
-		comp = "-Xms1g -Xmx2g" # "-Xms1g -Xmx2g" #"-Xms4m -Xmx8m"
+		comp = "-Xms4g -Xmx8g" # "-Xms1g -Xmx2g" #"-Xms4m -Xmx8m"
 	return comp
 
 def runJoanaForSpecificRevs():
