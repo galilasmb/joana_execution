@@ -1,0 +1,22 @@
+curator, cff86_38011, "/curator-recipes/target/dependency"
+eureka, e879a_a6b86, "/lib"
+go-lang-idea-plugin, 54ecb_671bb
+groovy-core, c77e4_c0124, "/target/dependency"
+hector, 67756_27a34, "/core/target/dependency"
+hive, 6993a_e1ee5
+tachyon, 04c6c_b2ae1, "/core/target/dependency"
+titan, 43eef_a3a3a, "/titan-core/target/dependency"
+jenkins, 1d321_58347, "/core/target/dependency"
+BroadleafCommerce, eaf10_3b938, "/core/broadleaf-framework/target/dependency"
+Activiti, a44b5_ca3f4, "/modules/activiti-engine/target/dependency"
+astyanax, aa573_1f517, "/target/dependency"
+curator,  7d30d_942e2, "/curator-recipes/target/dependency"
+elasticsearch-river-mongodb, 0fb6b_5d7c5, "/target/dependency"
+eureka, 914c2_b2710, "/lib"
+groovy-core, 533cc_acc7c, "/target/dependency"
+hector, beaab_45464, "/core/target/dependency"
+tachyon, 53804_1d4ac, "/core/target/dependency"
+titan, 61a34_35901, "/titan-hbase/target/dependency"
+jenkins, 59d31_21d13, "/core/target/dependency"
+yuicompressor, 96d78_e6c45, "/lib"
+

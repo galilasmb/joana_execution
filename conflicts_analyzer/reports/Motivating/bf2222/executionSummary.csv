@@ -1,0 +1,7 @@
+Method; Precision; Exceptions; SdgCreated; CgNodes; CgEdges; SdgNodes; SdgEdges; Time (ms); Memory (M); HasSourcedAndSink; HasLeftToRightVio; HasRightToLeftVio; TotalVios; InstVios; LineVios; DetailedLineVios; Left; Right
+void main.Main.main(String[] args); UNLIMITED_OBJECT_SENSITIVE; No; Yes; 113; 141; 6198; 90047; 5169; 466; No; -; -; -; -; -; -; [17, 18, 22]; [20, 21, 23]
+void main.Main.main(String[] args); UNLIMITED_OBJECT_SENSITIVE; No; Yes; 113; 141; 6198; 90047; 5317; 546; No; -; -; -; -; -; -; [17, 18, 22]; [20, 21, 23]
+void main.Main.main(String[] args); UNLIMITED_OBJECT_SENSITIVE; No; Yes; 113; 141; 6198; 90047; 5317; 546; No; -; -; -; -; -; -; [17, 18, 22]; [20, 21, 23]
+void main.Main.main(String[] args); UNLIMITED_OBJECT_SENSITIVE; No; Yes; 113; 141; 6198; 90047; 5317; 546; No; -; -; -; -; -; -; [17, 18, 22]; [20, 21, 23]
+void main.Main.main(String[] args); UNLIMITED_OBJECT_SENSITIVE; No; Yes; 113; 141; 6198; 90047; 5317; 546; No; -; -; -; -; -; -; [17, 18, 22]; [20, 21, 23]
+void main.Main.main(String[] args); UNLIMITED_OBJECT_SENSITIVE; No; Yes; 113; 141; 6198; 90047; 5169; 591; No; -; -; -; -; -; -; [17, 18, 22]; [20, 21, 23]

@@ -1,0 +1,9 @@
+Loading SDG...
+SDG: 6198 nodes and 90047 edges
+
+ANALYSIS
+Method: void main.Main.main(String[][][])
+0 SOURCES AND/OR SINKS
+
+NO FLOW FROM LEFT TO RIGHT OR RIGHT TO LEFT!
+NO FLOW FROM LEFT AND RIGHT TO A THIRD POINT!

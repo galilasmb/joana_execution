@@ -17,7 +17,7 @@ public class FileUtils {
 		List<String> jarsToEvaluate = new ArrayList<String>();
 		String[] paths = pathsStr.split(System.getProperty("path.separator"));
 		String[] jarPaths = getAllJarFilesStr(paths).split(System.getProperty("path.separator"));
-
+		
 		for(int i = 0; i < jarPaths.length; i++)
 		{
 			if(new File(jarPaths[i]).getParent().contains(baseFolderStr))
@@ -182,11 +182,9 @@ public class FileUtils {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		String[] res = getAllJarFiles("/home/joana_execution/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/target/dependency",
-				"/home/joana_execution/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/target/dependency:"
-				+ "/home/joana_execution/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/lib");
-		
-		
+		String[] res = getAllJarFiles("/Users/Roberto/Documents/UFPE/Msc/Projeto/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/target/dependency",
+				"/Users/Roberto/Documents/UFPE/Msc/Projeto/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/target/dependency:"
+				+ "/Users/Roberto/Documents/UFPE/Msc/Projeto/conflicts_analyzer/downloads/mongo-java-driver/editsamemc_revisions/rev_8e5de_c4707/rev_8e5de-c4707/git/lib");
 		for(String str : res)
 			System.out.println(str);
 		//System.out.println(readFirstLine("/Users/Roberto/Desktop/empty.txt"));

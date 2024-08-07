@@ -1,0 +1,12 @@
+Called joana - args: 7
+[]
+	Arg: /media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/
+	Arg: /Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/conflicts_analyzer/reports/Motivating/bf2222
+	Arg: /Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/conflicts_analyzer/sdgs/Motivating/bf2222
+	Arg: 
+	Arg: /media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/libs/
+	Arg: ignoreExceptions=false
+	Arg: initialPrecision=5
+Contrib: 
+LibPaths: /media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/libs/
+BasePath: 

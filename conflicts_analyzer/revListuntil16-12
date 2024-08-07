@@ -1,0 +1,16 @@
+cassandra, 6c9c0_863db, "/lib"
+cassandra, ee9fc_18f8c, "/lib"
+cassandra, d526a_7f133, "/lib"
+Activiti, 82ecd_7611d, "/modules/activiti-engine/target/dependency:/modules/activiti-process-validation/target/dependency"
+elasticsearch-river-mongodb, 6f57f_3cd95, "/target/dependency"
+eureka, 0a539_578f4, "/eureka-client/lib"
+hector, 5cfd9_25c28, "/core/target/dependency"
+hive, 6993a_e1ee5
+tachyon, 4a97b_ebb08, "/core/target/dependency"
+titan, 10f2e_ae749, "/titan-cassandra/target/dependency"
+jenkins, db559_1fd08, "/core/target/dependency"
+cassandra, 6fd41_3b793, "/lib"
+spring-boot, a2f4c_c1640
+yuicompressor, 96d78_e6c45, "/lib"
+elasticsearch-river-mongodb, 0fb6b_5d7c5, "/target/dependency"
+BroadleafCommerce, 37efd_bb21a, "/common/target/dependency:/core/broadleaf-framework/target/dependency"

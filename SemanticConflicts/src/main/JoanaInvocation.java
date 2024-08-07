@@ -238,6 +238,7 @@ public class JoanaInvocation {
 							leftIndexes = toIntegerList(lineInfo[5].trim());
 							rightIndexes = toIntegerList(lineInfo[6].trim());
 							bytecodeIndexToLine = toIntegersMap(lineInfo[7].trim());
+							// Insira os elementos de left_list e rightlist no mapa
 						}
 						for(SDGInstruction instruction : instructions ){ 
 							boolean leftInst = false;
@@ -513,7 +514,27 @@ public class JoanaInvocation {
 					info += "; " + cgEdges;
 					info += "; " + timeAndMem[0];
 					info += "; " + timeAndMem[1];
-					FileUtils.writeNewLine(sdgInfoFilePath, "-; "+ info + "; -; -; -"); 
+					
+					String method_source_sink = "";
+					List<Integer> left_list = new ArrayList<Integer>();
+        			List<Integer> right_list = new ArrayList<Integer>();
+
+					for (Map.Entry<String, ModifiedMethod> entry : methodsWithSrcOrSink.entrySet()) {
+						String method = entry.getKey();
+						ModifiedMethod modifiedMethod = entry.getValue();
+
+						// Realize a operação desejada com method e modifiedMethod
+						method_source_sink += method + " ";
+
+						left_list = modifiedMethod.getLeftContribs(); // Substitua YourType pelo tipo correto
+						right_list = modifiedMethod.getRightContribs(); // Substitua YourType pelo tipo correto
+
+						// Exemplo de uso das listas left_list e rightlist
+						// Faça o que for necessário com left_list e rightlist aqui
+					}
+					
+					// String rigth_list = methodsWithSrcOrSink.keySet();
+					FileUtils.writeNewLine(sdgInfoFilePath, method_source_sink+"; "+ info + "; "+left_list+"; "+right_list+"; -"); 
 				}
 				FileUtils.writeNewLine(reportFilePath, "");
 			}
@@ -1001,11 +1022,7 @@ public class JoanaInvocation {
 			else if(new File(firstLib).exists() && new File(firstLib).isFile()){
 				basePath = new File(firstLib).getParent();
 			}
-			
-			System.out.println(" "+basePath);
-			
-			System.out.println("###Entrou!###");
-
+			System.out.println("BasePath: "+basePath);
 			libPaths = String.join(":",FileUtils.getAllJarFiles(basePath, String.join(":", fullLibPathsList)));
 			System.out.println("FullLibPaths: "+libPaths);
 		}

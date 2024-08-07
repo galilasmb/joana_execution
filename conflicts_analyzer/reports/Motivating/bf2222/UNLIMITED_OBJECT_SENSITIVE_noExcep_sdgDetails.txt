@@ -1,0 +1,699 @@
+Setting up analysis scope... (from file /Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/joana.contrib.lib/stubs/jSDG-stubs-jre1.5.jar) done.
+Creating class hierarchy... (18309 classes) done.
+Setting up entrypoints... Setting up entrypoint main.Main.main([[[LString;)V... done.
+Building system dependence graph... 
+	callgraph: 113 nodes and 141 edges
+	intraproc: calls.mergeable..clinit.statics.heap(if,adj,df,reg).misc.killdef.convert.summary..
+done.
+Time needed: 5169ms - Memory: 466M used.
+SDG INFO
+java.lang.StringBuilder
+    Attributes: 0
+    Methods: 3
+        java.lang.String java.lang.StringBuilder.toString() - Instructions: 5
+            LINE 431: (java.lang.String java.lang.StringBuilder.toString():0) v3 = new java.lang.String
+            LINE 431: (java.lang.String java.lang.StringBuilder.toString():5) v4 = this.value
+            LINE 431: (java.lang.String java.lang.StringBuilder.toString():10) v6 = this.count
+            LINE 431: (java.lang.String java.lang.StringBuilder.toString():13) v3.<init>(v4, #(0), v6)
+            LINE 431: (java.lang.String java.lang.StringBuilder.toString():16) return v3
+        java.lang.StringBuilder java.lang.StringBuilder.append(java.lang.Object) - Instructions: 3
+            LINE 116: (java.lang.StringBuilder java.lang.StringBuilder.append(java.lang.Object):2) v5 = valueOf(p1)
+            LINE 116: (java.lang.StringBuilder java.lang.StringBuilder.append(java.lang.Object):5) v7 = this.append(v5)
+            LINE 116: (java.lang.StringBuilder java.lang.StringBuilder.append(java.lang.Object):8) return v7
+        void java.lang.StringBuilder.<init>(java.lang.String) - Instructions: 5
+            LINE 93: (void java.lang.StringBuilder.<init>(java.lang.String):2) v5 = p1.length()
+            LINE 93: (void java.lang.StringBuilder.<init>(java.lang.String):7) v7 = v5 + #(16)
+            LINE 93: (void java.lang.StringBuilder.<init>(java.lang.String):8) this.<init>(v7)
+            LINE 94: (void java.lang.StringBuilder.<init>(java.lang.String):13) v10 = this.append(p1)
+            LINE 95: (void java.lang.StringBuilder.<init>(java.lang.String):17) return
+java.security.AccessControlException
+    Attributes: 1
+        java.security.Permission perm
+    Methods: 1
+        void java.security.AccessControlException.<init>(java.lang.String, java.security.Permission) - Instructions: 3
+            LINE 52: (void java.security.AccessControlException.<init>(java.lang.String, java.security.Permission):2) this.<init>(p1)
+            LINE 53: (void java.security.AccessControlException.<init>(java.lang.String, java.security.Permission):7) this.perm = p2
+            LINE 54: (void java.security.AccessControlException.<init>(java.lang.String, java.security.Permission):10) return
+java.lang.Object
+    Attributes: 0
+    Methods: 0
+java.util.ArrayList
+    Attributes: 2
+        java.lang.Object[] elementData
+        int size
+    Methods: 2
+        java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]) - Instructions: 17
+            LINE 301: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):1) v4 = p1.length
+            LINE 301: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):3) v5 = this.size
+            LINE 301: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):6) if (v4 >= v5) goto 28
+            LINE 303: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):10) v7 = p1.getClass()
+            LINE 303: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):13) v9 = v7.getComponentType()
+            LINE 303: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):17) v10 = this.size
+            LINE 303: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):20) v12 = newInstance(v9, v10)
+            LINE 302: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):23) v13 = CHECKCAST v12
+            LINE 304: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):28) v15 = this.elementData
+            LINE 304: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):35) v17 = this.size
+            LINE 304: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):38) arraycopy(v15, #(0), v14, #(0), v17)
+            LINE 305: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):42) v19 = v14.length
+            LINE 305: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):44) v20 = this.size
+            LINE 305: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):47) if (v19 <= v20) goto 58
+            LINE 306: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):52) v21 = this.size
+            LINE 306: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):56) v14[v21] = #(null)
+            LINE 307: (java.lang.Object[] java.util.ArrayList.toArray(java.lang.Object[]):58) return v14
+        void java.util.ArrayList.<init>(int) - Instructions: 12
+            LINE 111: (void java.util.ArrayList.<init>(int):31) throw v7
+            LINE 113: (void java.util.ArrayList.<init>(int):34) v6 = new java.lang.Object[]
+            LINE 113: (void java.util.ArrayList.<init>(int):37) this.elementData = v6
+            LINE 114: (void java.util.ArrayList.<init>(int):40) return
+            LINE 109: (void java.util.ArrayList.<init>(int):1) this.<init>()
+            LINE 110: (void java.util.ArrayList.<init>(int):5) if (p1 >= #(0)) goto 34
+            LINE 111: (void java.util.ArrayList.<init>(int):8) v7 = new java.lang.IllegalArgumentException
+            LINE 111: (void java.util.ArrayList.<init>(int):12) v8 = new java.lang.StringBuilder
+            LINE 111: (void java.util.ArrayList.<init>(int):18) v8.<init>(#(Illegal Capacity: ))
+            LINE 112: (void java.util.ArrayList.<init>(int):22) v12 = v8.append(p1)
+            LINE 112: (void java.util.ArrayList.<init>(int):25) v14 = v12.toString()
+            LINE 111: (void java.util.ArrayList.<init>(int):28) v7.<init>(v14)
+java.lang.SecurityException
+    Attributes: 0
+    Methods: 1
+        void java.lang.SecurityException.<init>(java.lang.String) - Instructions: 2
+            LINE 35: (void java.lang.SecurityException.<init>(java.lang.String):2) this.<init>(p1)
+            LINE 36: (void java.lang.SecurityException.<init>(java.lang.String):5) return
+java.lang.String[]
+    Attributes: 0
+    Methods: 0
+java.lang.Throwable
+    Attributes: 0
+    Methods: 1
+        void java.lang.Throwable.printStackTrace() - Instructions: 0
+java.lang.String
+    Attributes: 0
+    Methods: 3
+        void java.lang.String.<init>(char[], int, int) - Instructions: 0
+        java.lang.String java.lang.String.valueOf(int) - Instructions: 0
+        java.lang.String java.lang.String.valueOf(java.lang.Object) - Instructions: 0
+java.lang.IllegalArgumentException
+    Attributes: 0
+    Methods: 0
+java.io.IOException
+    Attributes: 0
+    Methods: 1
+        void java.io.IOException.<init>(java.lang.String) - Instructions: 2
+            LINE 39: (void java.io.IOException.<init>(java.lang.String):2) this.<init>(p1)
+            LINE 40: (void java.io.IOException.<init>(java.lang.String):5) return
+java.lang.System
+    Attributes: 1
+        java.io.PrintStream out
+    Methods: 0
+java.lang.Exception
+    Attributes: 0
+    Methods: 2
+        void java.lang.Exception.<init>() - Instructions: 0
+        void java.lang.Exception.<init>(java.lang.String) - Instructions: 0
+java.lang.NullPointerException
+    Attributes: 0
+    Methods: 0
+java.lang.NegativeArraySizeException
+    Attributes: 0
+    Methods: 1
+        void java.lang.NegativeArraySizeException.<init>() - Instructions: 2
+            LINE 24: (void java.lang.NegativeArraySizeException.<init>():1) this.<init>()
+            LINE 25: (void java.lang.NegativeArraySizeException.<init>():4) return
+java.lang.Object[]
+    Attributes: 0
+    Methods: 0
+java.security.AccessControlContext
+    Attributes: 5
+        java.security.AccessControlContext privilegedContext
+        sun.security.util.Debug debug
+        boolean isPrivileged
+        java.security.ProtectionDomain[] context
+        java.security.DomainCombiner combiner
+    Methods: 3
+        void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]) - Instructions: 38
+            LINE 94: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):1) this.<init>()
+            LINE 67: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):6) this.combiner = #(null)
+            LINE 96: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):10) v6 = p1.length
+            LINE 96: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):11) if (v6 != #(0)) goto 23
+            LINE 97: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):16) this.context = #(null)
+            LINE 97: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):19) goto 138
+            LINE 98: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):23) v8 = p1.length
+            LINE 98: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):25) if (v8 != #(1)) goto 56
+            LINE 99: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):30) v30 = p1[#(0)]
+            LINE 99: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):31) if (v30 == #(null)) goto 50
+            LINE 100: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):36) v32 = p1.clone()
+            LINE 100: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):39) v33 = CHECKCAST v32
+            LINE 100: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):42) this.context = v33
+            LINE 100: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):45) goto 138
+            LINE 102: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):50) this.context = #(null)
+            LINE 102: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):53) goto 138
+            LINE 105: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):56) v10 = new java.util.ArrayList
+            LINE 105: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):61) v11 = p1.length
+            LINE 105: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):62) v10.<init>(v11)
+            LINE 106: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):68) goto 104
+            LINE 107: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):73) v14 = p1[v22]
+            LINE 107: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):74) if (v14 == #(null)) goto 99
+            LINE 107: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):80) v15 = p1[v22]
+            LINE 107: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):81) v17 = v10.contains(v15)
+            LINE 107: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):86) if (v17 != #(0)) goto 99
+            LINE 108: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):92) v18 = p1[v22]
+            LINE 108: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):93) v20 = v10.add(v18)
+            LINE 106: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):99) v21 = v22 + #(1)
+            LINE 106: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):104) v13 = p1.length
+            LINE 106: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):105) if (v22 < v13) goto 73
+            LINE 110: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):110) v24 = v10.size()
+            LINE 110: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):115) v25 = new java.security.ProtectionDomain[]
+            LINE 110: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):118) this.context = v25
+            LINE 111: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):124) v26 = this.context
+            LINE 111: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):127) v28 = v10.toArray(v26)
+            LINE 111: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):132) v29 = CHECKCAST v28
+            LINE 111: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):135) this.context = v29
+            LINE 113: (void java.security.AccessControlContext.<init>(java.security.ProtectionDomain[]):138) return
+        void java.security.AccessControlContext.checkPermission(java.security.Permission) - Instructions: 81
+            LINE 217: (void java.security.AccessControlContext.checkPermission(java.security.Permission):1) if (p1 != #(null)) goto 14
+            LINE 218: (void java.security.AccessControlContext.checkPermission(java.security.Permission):4) v94 = new java.lang.NullPointerException
+            LINE 218: (void java.security.AccessControlContext.checkPermission(java.security.Permission):10) v94.<init>(#(permission can't be null))
+            LINE 218: (void java.security.AccessControlContext.checkPermission(java.security.Permission):13) throw v94
+            LINE 220: (void java.security.AccessControlContext.checkPermission(java.security.Permission):14) v6 = getDebug()
+            LINE 220: (void java.security.AccessControlContext.checkPermission(java.security.Permission):17) if (v6 == #(null)) goto 115
+            LINE 221: (void java.security.AccessControlContext.checkPermission(java.security.Permission):22) v9 = isOn(#(stack))
+            LINE 221: (void java.security.AccessControlContext.checkPermission(java.security.Permission):25) if (v9 == #(0)) goto 37
+            LINE 222: (void java.security.AccessControlContext.checkPermission(java.security.Permission):28) v12 = currentThread()
+            LINE 222: (void java.security.AccessControlContext.checkPermission(java.security.Permission):32) dumpStack()
+            LINE 223: (void java.security.AccessControlContext.checkPermission(java.security.Permission):37) v16 = isOn(#(domain))
+            LINE 223: (void java.security.AccessControlContext.checkPermission(java.security.Permission):40) if (v16 == #(0)) goto 115
+            LINE 224: (void java.security.AccessControlContext.checkPermission(java.security.Permission):44) v17 = this.context
+            LINE 224: (void java.security.AccessControlContext.checkPermission(java.security.Permission):47) if (v17 != #(null)) goto 63
+            LINE 225: (void java.security.AccessControlContext.checkPermission(java.security.Permission):50) v39 = java.security.AccessControlContext.debug
+            LINE 225: (void java.security.AccessControlContext.checkPermission(java.security.Permission):55) v39.println(#(domain (context is null)))
+            LINE 225: (void java.security.AccessControlContext.checkPermission(java.security.Permission):58) goto 115
+            LINE 227: (void java.security.AccessControlContext.checkPermission(java.security.Permission):63) goto 107
+            LINE 228: (void java.security.AccessControlContext.checkPermission(java.security.Permission):66) v20 = java.security.AccessControlContext.debug
+            LINE 228: (void java.security.AccessControlContext.checkPermission(java.security.Permission):69) v21 = new java.lang.StringBuilder
+            LINE 228: (void java.security.AccessControlContext.checkPermission(java.security.Permission):75) v21.<init>(#(domain ))
+            LINE 228: (void java.security.AccessControlContext.checkPermission(java.security.Permission):79) v25 = v21.append(v38)
+            LINE 228: (void java.security.AccessControlContext.checkPermission(java.security.Permission):84) v28 = v25.append(#( ))
+            LINE 228: (void java.security.AccessControlContext.checkPermission(java.security.Permission):88) v29 = this.context
+            LINE 228: (void java.security.AccessControlContext.checkPermission(java.security.Permission):92) v30 = v29[v38]
+            LINE 228: (void java.security.AccessControlContext.checkPermission(java.security.Permission):93) v32 = v28.append(v30)
+            LINE 228: (void java.security.AccessControlContext.checkPermission(java.security.Permission):96) v34 = v32.toString()
+            LINE 228: (void java.security.AccessControlContext.checkPermission(java.security.Permission):99) v20.println(v34)
+            LINE 227: (void java.security.AccessControlContext.checkPermission(java.security.Permission):102) v37 = v38 + #(1)
+            LINE 227: (void java.security.AccessControlContext.checkPermission(java.security.Permission):107) v18 = this.context
+            LINE 227: (void java.security.AccessControlContext.checkPermission(java.security.Permission):110) v19 = v18.length
+            LINE 227: (void java.security.AccessControlContext.checkPermission(java.security.Permission):111) if (v38 < v19) goto 66
+            LINE 245: (void java.security.AccessControlContext.checkPermission(java.security.Permission):115) v42 = this.context
+            LINE 245: (void java.security.AccessControlContext.checkPermission(java.security.Permission):118) if (v42 != #(null)) goto 124
+            LINE 246: (void java.security.AccessControlContext.checkPermission(java.security.Permission):121) return
+            LINE 248: (void java.security.AccessControlContext.checkPermission(java.security.Permission):124) goto 249
+            LINE 249: (void java.security.AccessControlContext.checkPermission(java.security.Permission):128) v45 = this.context
+            LINE 249: (void java.security.AccessControlContext.checkPermission(java.security.Permission):132) v46 = v45[v52]
+            LINE 249: (void java.security.AccessControlContext.checkPermission(java.security.Permission):133) if (v46 == #(null)) goto 244
+            LINE 249: (void java.security.AccessControlContext.checkPermission(java.security.Permission):137) v47 = this.context
+            LINE 249: (void java.security.AccessControlContext.checkPermission(java.security.Permission):141) v48 = v47[v52]
+            LINE 249: (void java.security.AccessControlContext.checkPermission(java.security.Permission):143) v50 = v48.implies(p1)
+            LINE 249: (void java.security.AccessControlContext.checkPermission(java.security.Permission):146) if (v50 != #(0)) goto 244
+            LINE 250: (void java.security.AccessControlContext.checkPermission(java.security.Permission):149) v63 = java.security.AccessControlContext.debug
+            LINE 250: (void java.security.AccessControlContext.checkPermission(java.security.Permission):152) if (v63 == #(null))
+            LINE 251: (void java.security.AccessControlContext.checkPermission(java.security.Permission):155) v64 = java.security.AccessControlContext.debug
+            LINE 251: (void java.security.AccessControlContext.checkPermission(java.security.Permission):158) v65 = new java.lang.StringBuilder
+            LINE 251: (void java.security.AccessControlContext.checkPermission(java.security.Permission):164) v65.<init>(#(access denied ))
+            LINE 251: (void java.security.AccessControlContext.checkPermission(java.security.Permission):168) v69 = v65.append(p1)
+            LINE 251: (void java.security.AccessControlContext.checkPermission(java.security.Permission):171) v71 = v69.toString()
+            LINE 251: (void java.security.AccessControlContext.checkPermission(java.security.Permission):174) v64.println(v71)
+            LINE 252: (void java.security.AccessControlContext.checkPermission(java.security.Permission):179) v75 = isOn(#(failure))
+            LINE 252: (void java.security.AccessControlContext.checkPermission(java.security.Permission):182) if (v75 == #(0))
+            LINE 253: (void java.security.AccessControlContext.checkPermission(java.security.Permission):185) v77 = currentThread()
+            LINE 253: (void java.security.AccessControlContext.checkPermission(java.security.Permission):189) dumpStack()
+            LINE 254: (void java.security.AccessControlContext.checkPermission(java.security.Permission):193) v79 = this.context
+            LINE 254: (void java.security.AccessControlContext.checkPermission(java.security.Permission):197) v80 = v79[v52]
+            LINE 255: (void java.security.AccessControlContext.checkPermission(java.security.Permission):199) v81 = java.security.AccessControlContext.debug
+            LINE 256: (void java.security.AccessControlContext.checkPermission(java.security.Permission):204) v82 = new java.security.AccessControlContext$1
+            LINE 256: (void java.security.AccessControlContext.checkPermission(java.security.Permission):212) v82.<init>(this, v81, v80)
+            LINE 256: (void java.security.AccessControlContext.checkPermission(java.security.Permission):215) v85 = doPrivileged(v82)
+            LINE 264: (void java.security.AccessControlContext.checkPermission(java.security.Permission):219) v86 = new java.security.AccessControlException
+            LINE 264: (void java.security.AccessControlContext.checkPermission(java.security.Permission):223) v87 = new java.lang.StringBuilder
+            LINE 264: (void java.security.AccessControlContext.checkPermission(java.security.Permission):229) v87.<init>(#(access denied ))
+            LINE 264: (void java.security.AccessControlContext.checkPermission(java.security.Permission):233) v90 = v87.append(p1)
+            LINE 264: (void java.security.AccessControlContext.checkPermission(java.security.Permission):236) v92 = v90.toString()
+            LINE 264: (void java.security.AccessControlContext.checkPermission(java.security.Permission):240) v86.<init>(v92, p1)
+            LINE 264: (void java.security.AccessControlContext.checkPermission(java.security.Permission):243) throw v86
+            LINE 248: (void java.security.AccessControlContext.checkPermission(java.security.Permission):244) v51 = v52 + #(1)
+            LINE 248: (void java.security.AccessControlContext.checkPermission(java.security.Permission):249) v43 = this.context
+            LINE 248: (void java.security.AccessControlContext.checkPermission(java.security.Permission):252) v44 = v43.length
+            LINE 248: (void java.security.AccessControlContext.checkPermission(java.security.Permission):253) if (v52 < v44) goto 128
+            LINE 269: (void java.security.AccessControlContext.checkPermission(java.security.Permission):256) v53 = java.security.AccessControlContext.debug
+            LINE 269: (void java.security.AccessControlContext.checkPermission(java.security.Permission):259) if (v53 == #(null)) goto 284
+            LINE 270: (void java.security.AccessControlContext.checkPermission(java.security.Permission):262) v54 = java.security.AccessControlContext.debug
+            LINE 270: (void java.security.AccessControlContext.checkPermission(java.security.Permission):265) v55 = new java.lang.StringBuilder
+            LINE 270: (void java.security.AccessControlContext.checkPermission(java.security.Permission):271) v55.<init>(#(access allowed ))
+            LINE 270: (void java.security.AccessControlContext.checkPermission(java.security.Permission):275) v59 = v55.append(p1)
+            LINE 270: (void java.security.AccessControlContext.checkPermission(java.security.Permission):278) v61 = v59.toString()
+            LINE 270: (void java.security.AccessControlContext.checkPermission(java.security.Permission):281) v54.println(v61)
+            LINE 272: (void java.security.AccessControlContext.checkPermission(java.security.Permission):284) return
+        java.security.AccessControlContext java.security.AccessControlContext.optimize() - Instructions: 78
+            LINE 348: (java.security.AccessControlContext java.security.AccessControlContext.optimize():231) v37 = v42 + #(1)
+            LINE 348: (java.security.AccessControlContext java.security.AccessControlContext.optimize():236) v27[v42] = v33
+            LINE 340: (java.security.AccessControlContext java.security.AccessControlContext.optimize():237) v39 = v44 + #(1)
+            LINE 340: (java.security.AccessControlContext java.security.AccessControlContext.optimize():243) v30 = this.context
+            LINE 340: (java.security.AccessControlContext java.security.AccessControlContext.optimize():246) v31 = v30.length
+            LINE 340: (java.security.AccessControlContext java.security.AccessControlContext.optimize():247) if (v41 < v31) goto 185
+            LINE 353: (java.security.AccessControlContext java.security.AccessControlContext.optimize():254) v45 = v27.length
+            LINE 353: (java.security.AccessControlContext java.security.AccessControlContext.optimize():255) if (v40 == v45) goto 312
+            LINE 355: (java.security.AccessControlContext java.security.AccessControlContext.optimize():259) if (v14 != #(0)) goto 275
+            LINE 355: (java.security.AccessControlContext java.security.AccessControlContext.optimize():265) v46 = v8.context
+            LINE 355: (java.security.AccessControlContext java.security.AccessControlContext.optimize():268) v47 = v46.length
+            LINE 355: (java.security.AccessControlContext java.security.AccessControlContext.optimize():269) if (v40 != v47) goto 275
+            LINE 356: (java.security.AccessControlContext java.security.AccessControlContext.optimize():273) return v8
+            LINE 357: (java.security.AccessControlContext java.security.AccessControlContext.optimize():275) if (v14 == #(0)) goto 289
+            LINE 357: (java.security.AccessControlContext java.security.AccessControlContext.optimize():282) if (v40 != v17) goto 289
+            LINE 358: (java.security.AccessControlContext java.security.AccessControlContext.optimize():286) return this
+            LINE 360: (java.security.AccessControlContext java.security.AccessControlContext.optimize():289) v48 = new java.security.ProtectionDomain[]
+            LINE 361: (java.security.AccessControlContext java.security.AccessControlContext.optimize():302) arraycopy(v27, #(0), v48, #(0), v40)
+            LINE 369: (java.security.AccessControlContext java.security.AccessControlContext.optimize():312) this.context = v50
+            LINE 370: (java.security.AccessControlContext java.security.AccessControlContext.optimize():317) this.combiner = #(null)
+            LINE 371: (java.security.AccessControlContext java.security.AccessControlContext.optimize():322) this.isPrivileged = #(0)
+            LINE 373: (java.security.AccessControlContext java.security.AccessControlContext.optimize():326) return this
+            LINE 282: (java.security.AccessControlContext java.security.AccessControlContext.optimize():1) v3 = this.isPrivileged
+            LINE 282: (java.security.AccessControlContext java.security.AccessControlContext.optimize():4) if (v3 == #(0)) goto 15
+            LINE 283: (java.security.AccessControlContext java.security.AccessControlContext.optimize():8) v7 = this.privilegedContext
+            LINE 283: (java.security.AccessControlContext java.security.AccessControlContext.optimize():12) goto 20
+            LINE 285: (java.security.AccessControlContext java.security.AccessControlContext.optimize():15) v6 = getInheritedAccessControlContext()
+            LINE 290: (java.security.AccessControlContext java.security.AccessControlContext.optimize():20) v9 = this.context
+            LINE 290: (java.security.AccessControlContext java.security.AccessControlContext.optimize():23) if (v9 != #(null)) goto 33
+            LINE 290: (java.security.AccessControlContext java.security.AccessControlContext.optimize():27) goto 33
+            LINE 294: (java.security.AccessControlContext java.security.AccessControlContext.optimize():33) if (v8 == #(null)) goto 50
+            LINE 294: (java.security.AccessControlContext java.security.AccessControlContext.optimize():37) v13 = v8.context
+            LINE 294: (java.security.AccessControlContext java.security.AccessControlContext.optimize():40) if (v13 == #(null)) goto 50
+            LINE 294: (java.security.AccessControlContext java.security.AccessControlContext.optimize():44) goto 50
+            LINE 298: (java.security.AccessControlContext java.security.AccessControlContext.optimize():50) if (v14 == #(0)) goto 68
+            LINE 298: (java.security.AccessControlContext java.security.AccessControlContext.optimize():54) if (v12 == #(0)) goto 68
+            LINE 299: (java.security.AccessControlContext java.security.AccessControlContext.optimize():58) if (v8 == #(null)) goto 66
+            LINE 299: (java.security.AccessControlContext java.security.AccessControlContext.optimize():62) goto 66
+            LINE 299: (java.security.AccessControlContext java.security.AccessControlContext.optimize():66) return v55
+            LINE 302: (java.security.AccessControlContext java.security.AccessControlContext.optimize():68) if (v8 == #(null)) goto 89
+            LINE 302: (java.security.AccessControlContext java.security.AccessControlContext.optimize():72) v15 = v8.combiner
+            LINE 302: (java.security.AccessControlContext java.security.AccessControlContext.optimize():75) if (v15 == #(null)) goto 89
+            LINE 304: (java.security.AccessControlContext java.security.AccessControlContext.optimize():80) v52 = this.context
+            LINE 304: (java.security.AccessControlContext java.security.AccessControlContext.optimize():84) v54 = this.goCombiner(v52, v8)
+            LINE 304: (java.security.AccessControlContext java.security.AccessControlContext.optimize():87) return v54
+            LINE 309: (java.security.AccessControlContext java.security.AccessControlContext.optimize():89) if (v12 == #(0)) goto 95
+            LINE 310: (java.security.AccessControlContext java.security.AccessControlContext.optimize():93) return v8
+            LINE 313: (java.security.AccessControlContext java.security.AccessControlContext.optimize():95) v16 = this.context
+            LINE 313: (java.security.AccessControlContext java.security.AccessControlContext.optimize():98) v17 = v16.length
+            LINE 318: (java.security.AccessControlContext java.security.AccessControlContext.optimize():102) if (v14 == #(0)) goto 116
+            LINE 318: (java.security.AccessControlContext java.security.AccessControlContext.optimize():108) if (v17 > #(2)) goto 116
+            LINE 319: (java.security.AccessControlContext java.security.AccessControlContext.optimize():112) return this
+            LINE 324: (java.security.AccessControlContext java.security.AccessControlContext.optimize():116) if (v17 != #(1)) goto 137
+            LINE 324: (java.security.AccessControlContext java.security.AccessControlContext.optimize():120) v19 = this.context
+            LINE 324: (java.security.AccessControlContext java.security.AccessControlContext.optimize():124) v20 = v19[#(0)]
+            LINE 324: (java.security.AccessControlContext java.security.AccessControlContext.optimize():126) v21 = v8.context
+            LINE 324: (java.security.AccessControlContext java.security.AccessControlContext.optimize():130) v22 = v21[#(0)]
+            LINE 324: (java.security.AccessControlContext java.security.AccessControlContext.optimize():131) if (v20 != v22) goto 137
+            LINE 325: (java.security.AccessControlContext java.security.AccessControlContext.optimize():135) return v8
+            LINE 328: (java.security.AccessControlContext java.security.AccessControlContext.optimize():137) if (v14 == #(0)) goto 145
+            LINE 328: (java.security.AccessControlContext java.security.AccessControlContext.optimize():141) goto 155
+            LINE 328: (java.security.AccessControlContext java.security.AccessControlContext.optimize():145) v23 = v8.context
+            LINE 328: (java.security.AccessControlContext java.security.AccessControlContext.optimize():148) v24 = v23.length
+            LINE 331: (java.security.AccessControlContext java.security.AccessControlContext.optimize():155) v26 = v17 + v25
+            LINE 331: (java.security.AccessControlContext java.security.AccessControlContext.optimize():156) v27 = new java.security.ProtectionDomain[]
+            LINE 334: (java.security.AccessControlContext java.security.AccessControlContext.optimize():162) if (v14 != #(0)) goto 181
+            LINE 335: (java.security.AccessControlContext java.security.AccessControlContext.optimize():166) v28 = v8.context
+            LINE 335: (java.security.AccessControlContext java.security.AccessControlContext.optimize():175) arraycopy(v28, #(0), v27, #(0), v25)
+            LINE 340: (java.security.AccessControlContext java.security.AccessControlContext.optimize():181) goto 243
+            LINE 341: (java.security.AccessControlContext java.security.AccessControlContext.optimize():185) v32 = this.context
+            LINE 341: (java.security.AccessControlContext java.security.AccessControlContext.optimize():190) v33 = v32[v41]
+            LINE 342: (java.security.AccessControlContext java.security.AccessControlContext.optimize():195) if (v33 == #(null)) goto 237
+            LINE 343: (java.security.AccessControlContext java.security.AccessControlContext.optimize():201) goto 224
+            LINE 344: (java.security.AccessControlContext java.security.AccessControlContext.optimize():210) v34 = v27[v36]
+            LINE 344: (java.security.AccessControlContext java.security.AccessControlContext.optimize():211) if (v33 != v34) goto 217
+            LINE 345: (java.security.AccessControlContext java.security.AccessControlContext.optimize():214) goto 237
+            LINE 343: (java.security.AccessControlContext java.security.AccessControlContext.optimize():217) v35 = v36 + #(1)
+            LINE 343: (java.security.AccessControlContext java.security.AccessControlContext.optimize():224) if (v36 < v42) goto 210
+java.lang.reflect.Array
+    Attributes: 0
+    Methods: 2
+        java.lang.Object java.lang.reflect.Array.newArray(java.lang.Class, int) - Instructions: 7
+            LINE 636: (java.lang.Object java.lang.reflect.Array.newArray(java.lang.Class, int):1) if (p2 != #(0)) goto 12
+            LINE 636: (java.lang.Object java.lang.reflect.Array.newArray(java.lang.Class, int):4) v7 = new java.lang.NegativeArraySizeException
+            LINE 636: (java.lang.Object java.lang.reflect.Array.newArray(java.lang.Class, int):8) v7.<init>()
+            LINE 636: (java.lang.Object java.lang.reflect.Array.newArray(java.lang.Class, int):11) throw v7
+            LINE 637: (java.lang.Object java.lang.reflect.Array.newArray(java.lang.Class, int):12) v5 = new java.lang.Object
+            LINE 637: (java.lang.Object java.lang.reflect.Array.newArray(java.lang.Class, int):16) v5.<init>()
+            LINE 637: (java.lang.Object java.lang.reflect.Array.newArray(java.lang.Class, int):19) return v5
+        java.lang.Object java.lang.reflect.Array.newInstance(java.lang.Class, int) - Instructions: 2
+            LINE 52: (java.lang.Object java.lang.reflect.Array.newInstance(java.lang.Class, int):2) v5 = newArray(p1, p2)
+            LINE 52: (java.lang.Object java.lang.reflect.Array.newInstance(java.lang.Class, int):5) return v5
+char[]
+    Attributes: 0
+    Methods: 0
+main.Main
+    Attributes: 3
+        int sink
+        int source
+        int base
+    Methods: 4
+        int main.Main.sink(int) - Instructions: 4
+            LINE 31: (int main.Main.sink(int):0) v4 = java.lang.System.out
+            LINE 31: (int main.Main.sink(int):4) v4.println(p1)
+            LINE 32: (int main.Main.sink(int):9) v7 = p1 + #(1)
+            LINE 32: (int main.Main.sink(int):10) return v7
+        int main.Main.source(int) - Instructions: 4
+            LINE 26: (int main.Main.source(int):0) v4 = java.lang.System.out
+            LINE 26: (int main.Main.source(int):4) v4.println(p1)
+            LINE 27: (int main.Main.source(int):9) v7 = p1 + #(1)
+            LINE 27: (int main.Main.source(int):10) return v7
+        void main.Main.<init>() - Instructions: 2
+            LINE 8: (void main.Main.<init>():4) return
+            LINE 8: (void main.Main.<init>():1) this.<init>()
+        void main.Main.main(java.lang.String[]) - Instructions: 24
+            LINE 11: (void main.Main.main(java.lang.String[]):0) v3 = new main.Main
+            LINE 11: (void main.Main.main(java.lang.String[]):4) v3.<init>()
+            LINE 12: (void main.Main.main(java.lang.String[]):10) v3.source = #(0)
+            LINE 13: (void main.Main.main(java.lang.String[]):16) v8 = v3.source(#(1))
+            LINE 13: (void main.Main.main(java.lang.String[]):19) v3.source = v8
+            LINE 14: (void main.Main.main(java.lang.String[]):24) v3.base = #(0)
+            LINE 15: (void main.Main.main(java.lang.String[]):30) v10 = v3.sink(#(1))
+            LINE 15: (void main.Main.main(java.lang.String[]):34) v11 = v3.source
+            LINE 15: (void main.Main.main(java.lang.String[]):37) v12 = v10 + v11
+            LINE 15: (void main.Main.main(java.lang.String[]):38) v3.sink = v12
+            LINE 16: (void main.Main.main(java.lang.String[]):41) v13 = java.lang.System.out
+            LINE 16: (void main.Main.main(java.lang.String[]):45) v14 = v3.sink
+            LINE 16: (void main.Main.main(java.lang.String[]):48) v13.println(v14)
+            LINE 17: (void main.Main.main(java.lang.String[]):51) v16 = java.lang.System.out
+            LINE 17: (void main.Main.main(java.lang.String[]):55) v17 = v3.source
+            LINE 17: (void main.Main.main(java.lang.String[]):59) v18 = v3.sink
+            LINE 17: (void main.Main.main(java.lang.String[]):62) v19 = v17 + v18
+            LINE 17: (void main.Main.main(java.lang.String[]):63) v16.println(v19)
+            LINE 18: (void main.Main.main(java.lang.String[]):66) v21 = java.lang.System.out
+            LINE 18: (void main.Main.main(java.lang.String[]):70) v22 = v3.sink
+            LINE 18: (void main.Main.main(java.lang.String[]):74) v23 = v3.source
+            LINE 18: (void main.Main.main(java.lang.String[]):77) v24 = v22 + v23
+            LINE 18: (void main.Main.main(java.lang.String[]):78) v21.println(v24)
+            LINE 19: (void main.Main.main(java.lang.String[]):81) return
+java.io.FilterOutputStream
+    Attributes: 1
+        java.io.OutputStream out
+    Methods: 0
+java.util.AbstractCollection
+    Attributes: 0
+    Methods: 1
+        void java.util.AbstractCollection.<init>() - Instructions: 2
+            LINE 49: (void java.util.AbstractCollection.<init>():1) this.<init>()
+            LINE 50: (void java.util.AbstractCollection.<init>():4) return
+java.security.AccessControlContext$1
+    Attributes: 3
+        java.security.AccessControlContext this$0
+        java.security.ProtectionDomain val$pd
+        sun.security.util.Debug val$db
+    Methods: 2
+        void java.security.AccessControlContext$1.<init>(java.security.AccessControlContext, sun.security.util.Debug, java.security.ProtectionDomain) - Instructions: 5
+            LINE 1: (void java.security.AccessControlContext$1.<init>(java.security.AccessControlContext, sun.security.util.Debug, java.security.ProtectionDomain):2) this.this$0 = p1
+            LINE 1: (void java.security.AccessControlContext$1.<init>(java.security.AccessControlContext, sun.security.util.Debug, java.security.ProtectionDomain):7) this.val$db = p2
+            LINE 1: (void java.security.AccessControlContext$1.<init>(java.security.AccessControlContext, sun.security.util.Debug, java.security.ProtectionDomain):12) this.val$pd = p3
+            LINE 256: (void java.security.AccessControlContext$1.<init>(java.security.AccessControlContext, sun.security.util.Debug, java.security.ProtectionDomain):16) this.<init>()
+            LINE 256: (void java.security.AccessControlContext$1.<init>(java.security.AccessControlContext, sun.security.util.Debug, java.security.ProtectionDomain):19) return
+        java.lang.Object java.security.AccessControlContext$1.run() - Instructions: 8
+            LINE 258: (java.lang.Object java.security.AccessControlContext$1.run():1) v3 = this.val$db
+            LINE 258: (java.lang.Object java.security.AccessControlContext$1.run():4) v4 = new java.lang.StringBuilder
+            LINE 258: (java.lang.Object java.security.AccessControlContext$1.run():10) v4.<init>(#(domain that failed ))
+            LINE 258: (java.lang.Object java.security.AccessControlContext$1.run():14) v7 = this.val$pd
+            LINE 258: (java.lang.Object java.security.AccessControlContext$1.run():17) v9 = v4.append(v7)
+            LINE 258: (java.lang.Object java.security.AccessControlContext$1.run():20) v11 = v9.toString()
+            LINE 258: (java.lang.Object java.security.AccessControlContext$1.run():23) v3.println(v11)
+            LINE 259: (java.lang.Object java.security.AccessControlContext$1.run():27) return #(null)
+java.lang.Thread
+    Attributes: 2
+        java.lang.Object blockerLock
+        sun.nio.ch.Interruptible blocker
+    Methods: 3
+        void java.lang.Thread.interrupt() - Instructions: 18
+            LINE 762: (void java.lang.Thread.interrupt():1) v4 = currentThread()
+            LINE 762: (void java.lang.Thread.interrupt():4) if (this == v4) goto 12
+            LINE 763: (void java.lang.Thread.interrupt():8) this.checkAccess()
+            LINE 765: (void java.lang.Thread.interrupt():12) v6 = this.blockerLock
+            LINE 765: (void java.lang.Thread.interrupt():17) MONITORENTER v6
+            LINE 766: (void java.lang.Thread.interrupt():19) v7 = this.blocker
+            LINE 767: (void java.lang.Thread.interrupt():24) if (v7 == #(null)) goto 39
+            LINE 768: (void java.lang.Thread.interrupt():28) this.interrupt0()
+            LINE 769: (void java.lang.Thread.interrupt():32) v7.interrupt()
+            LINE 770: (void java.lang.Thread.interrupt():36) MONITOREXIT v6
+            LINE 770: (void java.lang.Thread.interrupt():37) return
+            LINE 765: (void java.lang.Thread.interrupt():39) MONITOREXIT v6
+            LINE 765: (void java.lang.Thread.interrupt():40) goto 47
+            LINE 765: (void java.lang.Thread.interrupt():44) MONITOREXIT v6
+            LINE 765: (void java.lang.Thread.interrupt():45) throw v12
+            LINE 773: (void java.lang.Thread.interrupt():47) this.interrupt0()
+            LINE 774: (void java.lang.Thread.interrupt():50) return
+            LINE 762: (void java.lang.Thread.interrupt():0) v12 = catch <exc>
+        void java.lang.Thread.dumpStack() - Instructions: 4
+            LINE 1128: (void java.lang.Thread.dumpStack():0) v2 = new java.lang.Exception
+            LINE 1128: (void java.lang.Thread.dumpStack():7) v2.<init>(#(Stack trace))
+            LINE 1128: (void java.lang.Thread.dumpStack():10) v2.printStackTrace()
+            LINE 1129: (void java.lang.Thread.dumpStack():13) return
+        void java.lang.Thread.checkAccess() - Instructions: 4
+            LINE 1186: (void java.lang.Thread.checkAccess():0) v4 = getSecurityManager()
+            LINE 1187: (void java.lang.Thread.checkAccess():5) if (v4 == #(null)) goto 13
+            LINE 1188: (void java.lang.Thread.checkAccess():10) v4.checkAccess(this)
+            LINE 1190: (void java.lang.Thread.checkAccess():13) return
+java.io.Writer
+    Attributes: 1
+        java.lang.Object lock
+    Methods: 1
+        void java.io.Writer.write(java.lang.String) - Instructions: 3
+            LINE 126: (void java.io.Writer.write(java.lang.String):4) v6 = p1.length()
+            LINE 126: (void java.io.Writer.write(java.lang.String):7) this.write(p1, #(0), v6)
+            LINE 127: (void java.io.Writer.write(java.lang.String):10) return
+java.lang.SecurityManager
+    Attributes: 1
+        java.lang.ThreadGroup rootGroup
+    Methods: 2
+        void java.lang.SecurityManager.checkPermission(java.security.Permission) - Instructions: 2
+            LINE 545: (void java.lang.SecurityManager.checkPermission(java.security.Permission):1) checkPermission(p1)
+            LINE 546: (void java.lang.SecurityManager.checkPermission(java.security.Permission):4) return
+        void java.lang.SecurityManager.checkAccess(java.lang.Thread) - Instructions: 10
+            LINE 668: (void java.lang.SecurityManager.checkAccess(java.lang.Thread):1) if (p1 != #(null)) goto 15
+            LINE 669: (void java.lang.SecurityManager.checkAccess(java.lang.Thread):4) v10 = new java.lang.NullPointerException
+            LINE 669: (void java.lang.SecurityManager.checkAccess(java.lang.Thread):10) v10.<init>(#(thread can't be null))
+            LINE 669: (void java.lang.SecurityManager.checkAccess(java.lang.Thread):13) throw v10
+            LINE 671: (void java.lang.SecurityManager.checkAccess(java.lang.Thread):15) v6 = p1.getThreadGroup()
+            LINE 671: (void java.lang.SecurityManager.checkAccess(java.lang.Thread):18) v7 = java.lang.SecurityManager.rootGroup
+            LINE 671: (void java.lang.SecurityManager.checkAccess(java.lang.Thread):21) if (v6 != v7) goto 31
+            LINE 672: (void java.lang.SecurityManager.checkAccess(java.lang.Thread):25) v8 = MODIFY_THREAD_PERMISSION
+            LINE 672: (void java.lang.SecurityManager.checkAccess(java.lang.Thread):28) this.checkPermission(v8)
+            LINE 676: (void java.lang.SecurityManager.checkAccess(java.lang.Thread):31) return
+java.security.ProtectionDomain[]
+    Attributes: 0
+    Methods: 0
+java.util.AbstractList
+    Attributes: 1
+        int modCount
+    Methods: 1
+        void java.util.AbstractList.<init>() - Instructions: 3
+            LINE 61: (void java.util.AbstractList.<init>():1) this.<init>()
+            LINE 692: (void java.util.AbstractList.<init>():6) this.modCount = #(0)
+            LINE 62: (void java.util.AbstractList.<init>():9) return
+java.security.AccessController
+    Attributes: 0
+    Methods: 3
+        void java.security.AccessController.checkPermission(java.security.Permission) - Instructions: 20
+            LINE 466: (void java.security.AccessController.checkPermission(java.security.Permission):0) v4 = getStackAccessControlContext()
+            LINE 468: (void java.security.AccessController.checkPermission(java.security.Permission):5) if (v4 != #(null)) goto 67
+            LINE 469: (void java.security.AccessController.checkPermission(java.security.Permission):8) v10 = getDebug()
+            LINE 470: (void java.security.AccessController.checkPermission(java.security.Permission):13) if (v10 == #(null)) goto 65
+            LINE 471: (void java.security.AccessController.checkPermission(java.security.Permission):18) v13 = isOn(#(stack))
+            LINE 471: (void java.security.AccessController.checkPermission(java.security.Permission):21) if (v13 == #(0)) goto 33
+            LINE 472: (void java.security.AccessController.checkPermission(java.security.Permission):24) v16 = currentThread()
+            LINE 472: (void java.security.AccessController.checkPermission(java.security.Permission):28) dumpStack()
+            LINE 473: (void java.security.AccessController.checkPermission(java.security.Permission):33) v20 = isOn(#(domain))
+            LINE 473: (void java.security.AccessController.checkPermission(java.security.Permission):36) if (v20 == #(0)) goto 46
+            LINE 474: (void java.security.AccessController.checkPermission(java.security.Permission):42) v10.println(#(domain (context is null)))
+            LINE 476: (void java.security.AccessController.checkPermission(java.security.Permission):46) v23 = new java.lang.StringBuilder
+            LINE 476: (void java.security.AccessController.checkPermission(java.security.Permission):52) v23.<init>(#(access allowed ))
+            LINE 476: (void java.security.AccessController.checkPermission(java.security.Permission):56) v27 = v23.append(p1)
+            LINE 476: (void java.security.AccessController.checkPermission(java.security.Permission):59) v29 = v27.toString()
+            LINE 476: (void java.security.AccessController.checkPermission(java.security.Permission):62) v10.println(v29)
+            LINE 478: (void java.security.AccessController.checkPermission(java.security.Permission):65) return
+            LINE 481: (void java.security.AccessController.checkPermission(java.security.Permission):67) v7 = v4.optimize()
+            LINE 482: (void java.security.AccessController.checkPermission(java.security.Permission):73) v7.checkPermission(p1)
+            LINE 484: (void java.security.AccessController.checkPermission(java.security.Permission):76) return
+        java.lang.Object java.security.AccessController.doPrivileged(java.security.PrivilegedAction) - Instructions: 0
+        java.security.AccessControlContext java.security.AccessController.getInheritedAccessControlContext() - Instructions: 4
+            LINE 418: (java.security.AccessControlContext java.security.AccessController.getInheritedAccessControlContext():0) v2 = new java.security.AccessControlContext
+            LINE 418: (java.security.AccessControlContext java.security.AccessController.getInheritedAccessControlContext():5) v4 = new java.security.ProtectionDomain[]
+            LINE 418: (java.security.AccessControlContext java.security.AccessController.getInheritedAccessControlContext():8) v2.<init>(v4)
+            LINE 418: (java.security.AccessControlContext java.security.AccessController.getInheritedAccessControlContext():11) return v2
+java.security.PrivilegedActionException
+    Attributes: 0
+    Methods: 0
+java.io.PrintStream
+    Attributes: 4
+        java.io.OutputStreamWriter charOut
+        boolean trouble
+        java.io.BufferedWriter textOut
+        boolean autoFlush
+    Methods: 5
+        void java.io.PrintStream.write(java.lang.String) - Instructions: 26
+            LINE 455: (void java.io.PrintStream.write(java.lang.String):3) MONITORENTER this
+            LINE 456: (void java.io.PrintStream.write(java.lang.String):5) this.ensureOpen()
+            LINE 457: (void java.io.PrintStream.write(java.lang.String):9) v5 = this.textOut
+            LINE 457: (void java.io.PrintStream.write(java.lang.String):13) v5.write(p1)
+            LINE 458: (void java.io.PrintStream.write(java.lang.String):17) v7 = this.textOut
+            LINE 458: (void java.io.PrintStream.write(java.lang.String):20) v7.flushBuffer()
+            LINE 459: (void java.io.PrintStream.write(java.lang.String):24) v9 = this.charOut
+            LINE 459: (void java.io.PrintStream.write(java.lang.String):27) v9.flushBuffer()
+            LINE 460: (void java.io.PrintStream.write(java.lang.String):31) v11 = this.autoFlush
+            LINE 460: (void java.io.PrintStream.write(java.lang.String):34) if (v11 == #(0)) goto 54
+            LINE 460: (void java.io.PrintStream.write(java.lang.String):40) v15 = p1.indexOf(#(10))
+            LINE 460: (void java.io.PrintStream.write(java.lang.String):43) if (v15 < #(0)) goto 54
+            LINE 461: (void java.io.PrintStream.write(java.lang.String):47) v16 = this.out
+            LINE 461: (void java.io.PrintStream.write(java.lang.String):50) v16.flush()
+            LINE 455: (void java.io.PrintStream.write(java.lang.String):54) MONITOREXIT this
+            LINE 455: (void java.io.PrintStream.write(java.lang.String):55) goto 77
+            LINE 455: (void java.io.PrintStream.write(java.lang.String):59) MONITOREXIT this
+            LINE 455: (void java.io.PrintStream.write(java.lang.String):60) throw v18
+            LINE 465: (void java.io.PrintStream.write(java.lang.String):62) v23 = currentThread()
+            LINE 465: (void java.io.PrintStream.write(java.lang.String):65) v23.interrupt()
+            LINE 465: (void java.io.PrintStream.write(java.lang.String):68) goto
+            LINE 468: (void java.io.PrintStream.write(java.lang.String):74) this.trouble = #(1)
+            LINE 470: (void java.io.PrintStream.write(java.lang.String):77) return
+            LINE 455: (void java.io.PrintStream.write(java.lang.String):0) v18 = catch <exc>
+            LINE 455: (void java.io.PrintStream.write(java.lang.String):0) v21 = catch <exc>
+            LINE 455: (void java.io.PrintStream.write(java.lang.String):0) v19 = catch <exc>
+        void java.io.PrintStream.ensureOpen() - Instructions: 6
+            LINE 274: (void java.io.PrintStream.ensureOpen():17) return
+            LINE 272: (void java.io.PrintStream.ensureOpen():1) v3 = this.out
+            LINE 272: (void java.io.PrintStream.ensureOpen():4) if (v3 != #(null)) goto 17
+            LINE 273: (void java.io.PrintStream.ensureOpen():7) v5 = new java.io.IOException
+            LINE 273: (void java.io.PrintStream.ensureOpen():13) v5.<init>(#(Stream closed))
+            LINE 273: (void java.io.PrintStream.ensureOpen():16) throw v5
+        void java.io.PrintStream.println(int) - Instructions: 9
+            LINE 668: (void java.io.PrintStream.println(int):3) MONITORENTER this
+            LINE 669: (void java.io.PrintStream.println(int):6) this.print(p1)
+            LINE 670: (void java.io.PrintStream.println(int):10) this.newLine()
+            LINE 668: (void java.io.PrintStream.println(int):14) MONITOREXIT this
+            LINE 668: (void java.io.PrintStream.println(int):15) goto 21
+            LINE 668: (void java.io.PrintStream.println(int):19) MONITOREXIT this
+            LINE 668: (void java.io.PrintStream.println(int):20) throw v6
+            LINE 672: (void java.io.PrintStream.println(int):21) return
+            LINE 668: (void java.io.PrintStream.println(int):0) v6 = catch <exc>
+        void java.io.PrintStream.newLine() - Instructions: 24
+            LINE 474: (void java.io.PrintStream.newLine():3) MONITORENTER this
+            LINE 475: (void java.io.PrintStream.newLine():5) this.ensureOpen()
+            LINE 476: (void java.io.PrintStream.newLine():9) v4 = this.textOut
+            LINE 476: (void java.io.PrintStream.newLine():12) v4.newLine()
+            LINE 477: (void java.io.PrintStream.newLine():16) v6 = this.textOut
+            LINE 477: (void java.io.PrintStream.newLine():19) v6.flushBuffer()
+            LINE 478: (void java.io.PrintStream.newLine():23) v8 = this.charOut
+            LINE 478: (void java.io.PrintStream.newLine():26) v8.flushBuffer()
+            LINE 479: (void java.io.PrintStream.newLine():30) v10 = this.autoFlush
+            LINE 479: (void java.io.PrintStream.newLine():33) if (v10 == #(0)) goto 44
+            LINE 480: (void java.io.PrintStream.newLine():37) v12 = this.out
+            LINE 480: (void java.io.PrintStream.newLine():40) v12.flush()
+            LINE 474: (void java.io.PrintStream.newLine():44) MONITOREXIT this
+            LINE 474: (void java.io.PrintStream.newLine():45) goto 67
+            LINE 474: (void java.io.PrintStream.newLine():49) MONITOREXIT this
+            LINE 474: (void java.io.PrintStream.newLine():50) throw v14
+            LINE 484: (void java.io.PrintStream.newLine():52) v19 = currentThread()
+            LINE 484: (void java.io.PrintStream.newLine():55) v19.interrupt()
+            LINE 484: (void java.io.PrintStream.newLine():58) goto
+            LINE 487: (void java.io.PrintStream.newLine():64) this.trouble = #(1)
+            LINE 489: (void java.io.PrintStream.newLine():67) return
+            LINE 474: (void java.io.PrintStream.newLine():0) v14 = catch <exc>
+            LINE 474: (void java.io.PrintStream.newLine():0) v17 = catch <exc>
+            LINE 474: (void java.io.PrintStream.newLine():0) v15 = catch <exc>
+        void java.io.PrintStream.print(int) - Instructions: 3
+            LINE 530: (void java.io.PrintStream.print(int):2) v5 = valueOf(p1)
+            LINE 530: (void java.io.PrintStream.print(int):5) this.write(v5)
+            LINE 531: (void java.io.PrintStream.print(int):8) return
+com.ibm.wala.FakeRootClass
+    Attributes: 0
+    Methods: 1
+        void com.ibm.wala.FakeRootClass.fakeRootMethod() - Instructions: 0
+java.lang.RuntimeException
+    Attributes: 0
+    Methods: 2
+        void java.lang.RuntimeException.<init>(java.lang.String) - Instructions: 2
+            LINE 43: (void java.lang.RuntimeException.<init>(java.lang.String):2) this.<init>(p1)
+            LINE 44: (void java.lang.RuntimeException.<init>(java.lang.String):5) return
+        void java.lang.RuntimeException.<init>() - Instructions: 2
+            LINE 33: (void java.lang.RuntimeException.<init>():4) return
+            LINE 32: (void java.lang.RuntimeException.<init>():1) this.<init>()
+java.lang.AbstractStringBuilder
+    Attributes: 2
+        char[] value
+        int count
+    Methods: 1
+        void java.lang.AbstractStringBuilder.<init>(int) - Instructions: 4
+            LINE 43: (void java.lang.AbstractStringBuilder.<init>(int):1) this.<init>()
+            LINE 44: (void java.lang.AbstractStringBuilder.<init>(int):6) v5 = new []
+            LINE 44: (void java.lang.AbstractStringBuilder.<init>(int):8) this.value = v5
+            LINE 45: (void java.lang.AbstractStringBuilder.<init>(int):11) return
+java.io.BufferedWriter
+    Attributes: 5
+        java.io.Writer out
+        char[] cb
+        java.lang.String lineSeparator
+        int nextChar
+        int nChars
+    Methods: 4
+        void java.io.BufferedWriter.flushBuffer() - Instructions: 18
+            LINE 111: (void java.io.BufferedWriter.flushBuffer():19) MONITOREXIT v3
+            LINE 111: (void java.io.BufferedWriter.flushBuffer():20) return
+            LINE 112: (void java.io.BufferedWriter.flushBuffer():22) v7 = this.out
+            LINE 112: (void java.io.BufferedWriter.flushBuffer():26) v8 = this.cb
+            LINE 112: (void java.io.BufferedWriter.flushBuffer():31) v9 = this.nextChar
+            LINE 112: (void java.io.BufferedWriter.flushBuffer():34) v7.write(v8, #(0), v9)
+            LINE 113: (void java.io.BufferedWriter.flushBuffer():39) this.nextChar = #(0)
+            LINE 108: (void java.io.BufferedWriter.flushBuffer():43) MONITOREXIT v3
+            LINE 108: (void java.io.BufferedWriter.flushBuffer():44) goto 50
+            LINE 108: (void java.io.BufferedWriter.flushBuffer():48) MONITOREXIT v3
+            LINE 108: (void java.io.BufferedWriter.flushBuffer():49) throw v11
+            LINE 115: (void java.io.BufferedWriter.flushBuffer():50) return
+            LINE 108: (void java.io.BufferedWriter.flushBuffer():0) v11 = catch <exc>
+            LINE 108: (void java.io.BufferedWriter.flushBuffer():1) v3 = this.lock
+            LINE 108: (void java.io.BufferedWriter.flushBuffer():6) MONITORENTER v3
+            LINE 109: (void java.io.BufferedWriter.flushBuffer():8) this.ensureOpen()
+            LINE 110: (void java.io.BufferedWriter.flushBuffer():12) v5 = this.nextChar
+            LINE 110: (void java.io.BufferedWriter.flushBuffer():15) if (v5 != #(0)) goto 22
+        void java.io.BufferedWriter.write(java.lang.String, int, int) - Instructions: 29
+            LINE 203: (void java.io.BufferedWriter.write(java.lang.String, int, int):1) v6 = this.lock
+            LINE 203: (void java.io.BufferedWriter.write(java.lang.String, int, int):7) MONITORENTER v6
+            LINE 204: (void java.io.BufferedWriter.write(java.lang.String, int, int):9) this.ensureOpen()
+            LINE 206: (void java.io.BufferedWriter.write(java.lang.String, int, int):17) v8 = p2 + p3
+            LINE 207: (void java.io.BufferedWriter.write(java.lang.String, int, int):20) goto 99
+            LINE 208: (void java.io.BufferedWriter.write(java.lang.String, int, int):25) v9 = this.nChars
+            LINE 208: (void java.io.BufferedWriter.write(java.lang.String, int, int):29) v10 = this.nextChar
+            LINE 208: (void java.io.BufferedWriter.write(java.lang.String, int, int):32) v11 = v9 - v10
+            LINE 208: (void java.io.BufferedWriter.write(java.lang.String, int, int):37) v12 = v8 - v24
+            LINE 208: (void java.io.BufferedWriter.write(java.lang.String, int, int):38) v14 = this.min(v11, v12)
+            LINE 209: (void java.io.BufferedWriter.write(java.lang.String, int, int):50) v15 = v24 + v14
+            LINE 209: (void java.io.BufferedWriter.write(java.lang.String, int, int):52) v16 = this.cb
+            LINE 209: (void java.io.BufferedWriter.write(java.lang.String, int, int):56) v17 = this.nextChar
+            LINE 209: (void java.io.BufferedWriter.write(java.lang.String, int, int):59) p1.getChars(v24, v15, v16, v17)
+            LINE 210: (void java.io.BufferedWriter.write(java.lang.String, int, int):66) v19 = v24 + v14
+            LINE 211: (void java.io.BufferedWriter.write(java.lang.String, int, int):71) v20 = this.nextChar
+            LINE 211: (void java.io.BufferedWriter.write(java.lang.String, int, int):76) v21 = v20 + v14
+            LINE 211: (void java.io.BufferedWriter.write(java.lang.String, int, int):77) this.nextChar = v21
+            LINE 212: (void java.io.BufferedWriter.write(java.lang.String, int, int):81) v22 = this.nextChar
+            LINE 212: (void java.io.BufferedWriter.write(java.lang.String, int, int):85) v23 = this.nChars
+            LINE 212: (void java.io.BufferedWriter.write(java.lang.String, int, int):88) if (v22 < v23) goto 99
+            LINE 213: (void java.io.BufferedWriter.write(java.lang.String, int, int):92) this.flushBuffer()
+            LINE 207: (void java.io.BufferedWriter.write(java.lang.String, int, int):99) if (v24 < v8) goto 25
+            LINE 203: (void java.io.BufferedWriter.write(java.lang.String, int, int):104) MONITOREXIT v6
+            LINE 203: (void java.io.BufferedWriter.write(java.lang.String, int, int):105) goto 112
+            LINE 203: (void java.io.BufferedWriter.write(java.lang.String, int, int):110) MONITOREXIT v6
+            LINE 203: (void java.io.BufferedWriter.write(java.lang.String, int, int):111) throw v26
+            LINE 216: (void java.io.BufferedWriter.write(java.lang.String, int, int):112) return
+            LINE 203: (void java.io.BufferedWriter.write(java.lang.String, int, int):0) v26 = catch <exc>
+        void java.io.BufferedWriter.ensureOpen() - Instructions: 6
+            LINE 98: (void java.io.BufferedWriter.ensureOpen():1) v3 = this.out
+            LINE 98: (void java.io.BufferedWriter.ensureOpen():4) if (v3 != #(null)) goto 17
+            LINE 99: (void java.io.BufferedWriter.ensureOpen():7) v5 = new java.io.IOException
+            LINE 99: (void java.io.BufferedWriter.ensureOpen():13) v5.<init>(#(Stream closed))
+            LINE 99: (void java.io.BufferedWriter.ensureOpen():16) throw v5
+            LINE 100: (void java.io.BufferedWriter.ensureOpen():17) return
+        void java.io.BufferedWriter.newLine() - Instructions: 3
+            LINE 226: (void java.io.BufferedWriter.newLine():2) v3 = this.lineSeparator
+            LINE 226: (void java.io.BufferedWriter.newLine():5) this.write(v3)
+            LINE 227: (void java.io.BufferedWriter.newLine():8) return

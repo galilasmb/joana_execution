@@ -1,0 +1,8 @@
+Activiti, ced63_fba31, "/modules/activiti-engine/target/dependency"
+hector, aaccf_2f4a8, "/lib:/antlib"
+tachyon, 5dcfb_fc43c, "/core/target/dependency"
+titan, 73e1a_b696b, "/target/dependency"
+jenkins, b875d_09c59, "/core/target/dependency"
+cassandra, 489a9_6fd41, "/lib"
+yuicompressor, 86195_b3e82, "/lib"
+BroadleafCommerce, 31f30_8f155, "/admin/broadleaf-open-admin-platform/target/dependency"

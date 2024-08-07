@@ -9,9 +9,9 @@ import com.ibm.wala.util.graph.GraphIntegrity.UnsoundGraphException;
 public class TestJoanaInvocation {
 	public static void main(String[] args) throws ClassHierarchyException, ClassNotFoundException, IOException, UnsoundGraphException, CancelException {
 		JoanaInvocation.main(new String[]{
-				//"/home/joana_execution/conflicts_analyzer/TestFlows/","1"
-				//"//home/joana_execution/", "1"
-				//"/media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf","0"
+				//"/Users/Roberto/Documents/UFPE/Msc/Projeto/conflicts_analyzer/TestFlows/","1"
+				"/Users/Roberto/Documents/UFPE/Msc/Projeto/projects/", "1"
+				//"/Users/Roberto/Documents/UFPE/Msc/Projeto/projects/rsmbf/","0"
 		});
 	}
 }

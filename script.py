@@ -1,3 +1,7 @@
+import csv
+import io
+import datetime
+
 def readRealtimeProcOutput(proc):
 	print "Entering readRealTimeProcOutput"
 	import sys
@@ -45,19 +49,6 @@ def runSubProcess(cmd, report_file):
 	#proc.communicate()[0]
 	print "Java Return Code: " +str(returnCode)
 
-#def runSubProcess(cmd, report_file):
-#	import subprocess
-#	import sys
-#	proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-#	lines = ""
-#	makeFiledirs(report_file)
-#	with open(report_file, 'w') as f:
-#		for line in iter(proc.stdout.readline, ''):
-#			lines += line
-#			sys.stdout.write(line)
-#			f.write(line)
-#	return lines
-
 def PopenBash(cmd):
 	import subprocess
 	import os
@@ -80,16 +71,6 @@ def runBuild(buildCmd, report_file):
 	print "Build Return Code: " +str(returnCode)
 	return returnCode == 0
 	#return lines
-
-#def checkBuildResult(unf_lines):
-#	lines = unf_lines.split("\n")
-#	i = len(lines) - 1
-#	buildSuc = ["BUILD SUCCESSFUL", "BUILD SUCCESS", "[INFO] BUILD SUCCESS"]
-#	buildFail = ["BUILD FAILED", "BUILD FAILURE", "[INFO] BUILD FAILURE"]
-#	buildRes = buildSuc + buildFail
-#	while i >= 0 and (lines[i] not in buildRes) :
-#		i -= 1
-#	return i >= 0 and lines[i] in buildSuc
 
 def makeFiledirs(filename):
 	import os
@@ -170,12 +151,13 @@ def run_joana(REV_GIT_PATH, REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapSt
 	baseCmd += " \'" +revContribs + "\'"
 	baseCmd += " \"" +libPaths + "\""
 	#print baseCmd
-	ignoreExceptions=["true", "false"]
+	#ignoreExceptions=["true", "false"]
+	ignoreExceptions=["false"]
 	initialExceptionMsg = "ignoreExceptions="
 	initialPrecisionMsg = "initialPrecision="
 	precisions = ["TYPE_BASED", "INSTANCE_BASED","OBJECT_SENSITIVE", "N1_OBJECT_SENSITIVE", 
 		"UNLIMITED_OBJECT_SENSITIVE", "N1_CALL_STACK", "N2_CALL_STACK", "N3_CALL_STACK"]
-	precisionsIds = xrange(8)#[0,1,2,3,4,5,6,7]
+	precisionsIds = [4]#xrange(8)#[0,1,2,3,4,5,6,7]
 	if(os.path.exists(REV_REPORTS_PATH + "/executionSummary.csv")):
 		open(REV_REPORTS_PATH + "/executionSummary.csv","w").close()
 	for ignoreException in ignoreExceptions:
@@ -194,6 +176,7 @@ def run_joana(REV_GIT_PATH, REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapSt
 				makeFiledirs(sysout_path)
 			print cmd
 			print
+			#runSubProcess(cmd, sysout_path)
 			runSubProcess(cmd + " > "+sysout_path, sysout_path)
 			sys.stdout.flush()
 
@@ -220,12 +203,12 @@ def checkIfIsInYearRange(yearRange, revHasContrib, revContribs):
 			isInYearRange = ((startYear == "" or year >= int(startYear)) and (endYear == "" or year <= int(endYear)))
 	return isInYearRange
 
-def getHeapComplement(path):    
-    if path[:27] == "/home/joana_execution":
-		comp = "-Xms220g -Xmx520g"#"-Xms128g -Xmx192g"
-    else:
+def getHeapComplement(path):
+	if path[:27] == "/home/local/CIN/rsmbf/rsmbf":
+		comp = "-Xms80g -Xmx120g"#"-Xms128g -Xmx192g"
+	else:
 		comp = "-Xms4g -Xmx8g" # "-Xms1g -Xmx2g" #"-Xms4m -Xmx8m"
-    return comp
+	return comp
 
 def runJoanaForSpecificRevs():
 	print "##########Executando###############"
@@ -269,11 +252,11 @@ def runJoanaForSpecificRevs():
 		print "\n\nREV ", revStr
 		REV_REPORTS_PATH = PROJECT_REPORTS_PATH + "/" + revStr
 		REV_SDGS_PATH = PROJECT_SDGS_PATH + "/" + revStr
-		libStr = "/home/joana_execution/libs/"
+		libStr = "/media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/libs/"
 		# if(len(revLineSplitted) >= 3):
 			# libStr = revLineSplitted[2].strip()
 		print "\n\nGIT", REV_GIT_PATH, "\n\nREV_REPORTS", REV_REPORTS_PATH, "\n\nSDG", REV_SDGS_PATH, "\n\nRevContrib", revContribs, "\n\nHeapSTR", heapStr, "\n\nLibSTR", libStr
-		run_joana("/home/joana_execution/", REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapStr, libStr)
+		run_joana("/media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/", REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapStr, libStr)
 
 def main():
 	build_all = True
@@ -357,5 +340,160 @@ def main():
 				   			REV_SDGS_PATH = PROJECT_SDGS_PATH + "/" + rev
 				   			#run_joana(REV_GIT_PATH, REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapStr, "")
 
+
+
+# "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/",
+#                 "/Users/galileu/Documents/joana/reports/Motivating/bf2222",
+#                 "/Users/galileu/Documents/joana/sdgs/Motivating/bf2222",
+#                 "37; bf2222; Fri Jul 18 04:55:50 BRT 2014; /Users/galileu/Documents/joana/downloads/Motivating/bf2222/original-without-dependencies/merge/learning/src/main/Main.java; void main.Main.main(java.lang.String[]);37; [12, 13, 17]; [15, 16, 18]",
+#                 "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/libs",
+#                 "ignoreExceptions=true",
+#                 "initialPrecision=4"
+
+
+currentDir = "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/"
+homePath = "/Users/galileu/"
+datasetPath = "/Users/galileu/mergedataset/"
+libStr = "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/libs/"
+project_path_joana = "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/"
+
+def runJoana():
+	print "##########Executando###############"
+	import os
+	#currentDir = os.getcwd()
+	
+	CA_PATH = currentDir + "/conflicts_analyzer"
+	
+	heapStr = getHeapComplement(currentDir)
+	
+	DOWNLOAD_PATH = datasetPath
+	REPORTS_PATH = homePath + "joana/reports"
+	SDGS_PATH = homePath + "joana/sdgs"
+	
+	file_name_revList = homePath + "revList.csv"
+	
+	print "LENDO ARQUIVO DE ENTRADA DOS PROJETOS:", file_name_revList 
+	
+	ID = 1
+	# Abrir o arquivo CSV para leitura
+	with io.open(file_name_revList, mode='r', encoding='utf-8') as file:
+		# Criar um leitor de CSV
+		csv_reader = csv.reader(file, delimiter=';')
+		
+		# Ignorar a primeira linha (cabecalho)
+		next(csv_reader)
+		
+		# Ler as linhas restantes e armazenar os dados em suas respectivas listas
+		for row in csv_reader:
+			project = row[0]
+			merge_commit = row[1]
+			class_name = row[2]
+			class_path = class_name.replace(".", "/")
+			method = row[3]
+			left_modification = row[4]
+			right_modification = row[7]
+
+			revStr = project+"/"+merge_commit
+
+			git_path_generated = datasetPath+revStr +"/source/"+class_path
+			
+			print "GIT PATH GENERATED:"+git_path_generated
+
+			PROJECT_REPORTS_PATH = REPORTS_PATH + "/" + revStr
+			PROJECT_SDGS_PATH = SDGS_PATH + "/" + revStr
+			
+			PROJECT_PATH = datasetPath + "/" + revStr
+			print "Analisando projeto: ", PROJECT_PATH
+			
+			
+			REV_GIT_PATH = git_path_generated
+
+			print "\n\nprojects " + PROJECT_REPORTS_PATH
+			
+			revContribs = getContribs(row, ID)
+			
+			print "\n\nrevContribs: "+ revContribs
+			
+			print "\n\nGIT PAH", REV_GIT_PATH
+			
+			print "\n\nREV ", revStr
+			
+			REV_REPORTS_PATH = PROJECT_REPORTS_PATH+ "/" +class_path
+			REV_SDGS_PATH = PROJECT_SDGS_PATH+ "/" +class_path
+			
+			print "\nGIT", REV_GIT_PATH, "\nREV_REPORTS", REV_REPORTS_PATH, "\nSDG", REV_SDGS_PATH, "\nRevContrib", revContribs, "\nHeapSTR", heapStr, "\nLibSTR", libStr
+			
+			run_joana("/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/", REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapStr, libStr)
+
+			ID = ID + 1
+
+#java -Xms4g -Xmx8g -jar joana_inv.jar "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/" "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/conflicts_analyzer/reports/Motivating/bf2222" "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/conflicts_analyzer/sdgs/Motivating/bf2222" '488; bf2222; Fri Jul 18 04:55:50 BRT 2014; /Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/conflicts_analyzer/downloads/Motivating/bf2222/original-without-dependencies/merge/learning/src/main/Main.java; void main.Main.main(String[] args);54; [17, 18, 22]; [20, 21, 23]' "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/libs/" "ignoreExceptions=true" "initialPrecision=4"
+
+#java -Xms4g -Xmx8g -jar joana_inv.jar "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/" "/Users/galileu/joana/reports/Motivating/bf2222/src/main/Main" "/Users/galileu/joana/sdgs/Motivating/bf2222/src/main/Main" '1;bf2222;Wed Jul 17 20:07:00  2024;/Users/galileu/mergedataset/Motivating/bf2222/source/src/main/Main/merge.java;void main.Main.main(java.lang.String[]);323;[11, 12, 13, 17];[15, 16, 18]' "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/libs/" "ignoreExceptions=false" "initialPrecision=4"
+
+def convert_to_list(input_str):
+	clean_str = input_str.strip("[]")
+
+	output_list = [int(x.strip()) for x in clean_str.split(",") if x.strip()]
+
+	# Imprimindo a lista de inteiros
+	return output_list
+
+
+def getContribs(row, ID):
+
+	DATE = datetime.datetime.now().strftime("%a %b %d %H:%M:%S %Z %Y")
+	project = row[0]
+	merge_commit = row[1]
+	class_name = row[2]
+	class_path = class_name.replace(".", "/")
+	method = row[3]
+	left_modification = row[4]
+	right_modification = row[7]
+	
+	file_java = datasetPath+project+"/"+merge_commit+"/source/"+class_path+"/merge.java"
+
+	qtd_lines = max(max(convert_to_list(left_modification)), max(convert_to_list(right_modification)))
+
+	contribs = "%s;%s;%s;%s;%s;%s;%s;%s" % (ID, merge_commit, DATE, file_java, method, str(qtd_lines+300), left_modification, right_modification)
+
+	# Imprimindo a saida
+	return contribs
+
+	#Retornar com os seguintes parametros: 
+	#['37;bf2222;Fri Jul 18 04:55:50 BRT 2014;/media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/conflicts_analyzer/downloads/Motivating/bf2222/original-without-dependencies/merge/learning/src/main/Main.java;void main.Main.cleaner();37;[17, 18, 22];[20, 21, 23]']
+
+	#['37;69ff2669eec265e25721dbc27cb00f6c381d0b41;Wed Jul 17 17:15:50  2024;antlr4/69ff2669eec265e25721dbc27cb00f6c381d0b41/source/org/antlr/v4/codegen/target/Python2Target/merge.java;python2Keywords;364;[64];[53]']
+
+
+def contrib():
+	# Nome do arquivo CSV
+	
+	file_name = '/Users/galileu/revList.csv'
+	
+	ID = 1
+	# Abrir o arquivo CSV para leitura
+	with io.open(file_name, mode='r', encoding='utf-8') as file:
+		# Criar um leitor de CSV
+		csv_reader = csv.reader(file, delimiter=';')
+		
+		# Ignorar a primeira linha (cabecalho)
+		next(csv_reader)
+		
+		# Ler as linhas restantes e armazenar os dados em suas respectivas listas
+		for row in csv_reader:
+
+			actual_contrib = getContribs(row, ID)
+
+			print actual_contrib
+
+			ID = ID + 1
+
+
 # main()
-runJoanaForSpecificRevs()
+
+#runJoanaForSpecificRevs()
+
+runJoana()
+
+#contrib()

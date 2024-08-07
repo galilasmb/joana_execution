@@ -1,4 +1,4 @@
-root <- "/home/joana_execution/conflicts_analyzer"
+root <- "/media/galileu/Arquivos/Doutorado/Pesquisa/JOANA/rsmbf/conflicts_analyzer"
 server_reports <- paste(root, "/server_reports/19-09", sep="") #""#"/server_reports/1"
 rDir <- paste(server_reports, "/R", sep="")
 plots <- paste(rDir, "/plots",sep="")

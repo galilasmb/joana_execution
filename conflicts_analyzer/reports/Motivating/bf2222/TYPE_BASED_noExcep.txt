@@ -1,0 +1,18 @@
+Creating SDG...
+
+Error Message: method is null
+Stacktrace: com.ibm.wala.ipa.callgraph.Entrypoint.<init>(Entrypoint.java:46)
+com.ibm.wala.ipa.callgraph.impl.DefaultEntrypoint.<init>(DefaultEntrypoint.java:32)
+com.ibm.wala.ipa.callgraph.impl.SubtypesEntrypoint.<init>(SubtypesEntrypoint.java:33)
+edu.kit.joana.wala.core.SDGBuilder.buildCallgraph(SDGBuilder.java:954)
+edu.kit.joana.wala.core.SDGBuilder.run(SDGBuilder.java:501)
+edu.kit.joana.wala.core.SDGBuilder.buildAndKeepBuilder(SDGBuilder.java:402)
+edu.kit.joana.api.sdg.SDGBuildPreparation.computeAndKeepBuilder(SDGBuildPreparation.java:491)
+edu.kit.joana.api.sdg.SDGProgram.createSDGProgram(SDGProgram.java:238)
+edu.kit.joana.api.sdg.SDGProgram.createSDGProgram(SDGProgram.java:227)
+main.JoanaInvocation.runForSpecificPrecision(JoanaInvocation.java:452)
+main.JoanaInvocation.runForEachPrecision(JoanaInvocation.java:381)
+main.JoanaInvocation.run(JoanaInvocation.java:349)
+main.JoanaInvocation.run(JoanaInvocation.java:303)
+main.JoanaInvocation.main(JoanaInvocation.java:1005)
+FAILED TO BUILD SDG!

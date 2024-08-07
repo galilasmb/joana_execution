@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 import main.LineInterferencesPoints;
-import main.ViolationPathCollector;
+// import main.ViolationPathCollector;
 import main.ViolationResult;
 
 public class ViolationsPrinter {
@@ -414,36 +414,36 @@ public class ViolationsPrinter {
 	}
 
 	private static void printOrderedEdges(SDG sdg, Collection<SecurityNode> invNodes, SecurityNode source, SecurityNode sink, String reportFilePath) throws IOException {
-		ViolationPathCollector coll = new ViolationPathCollector(sdg);
-		List<List<SDGEdge>> pathes = coll.getOrderedEdges(invNodes, source, sink);	
-		List<List<List<SDGEdge>>> mergedPaths = coll.mergePaths(pathes);
-		System.out.println("           Merged paths:");
-		for(List<List<SDGEdge>> path : mergedPaths)
-		{
-			System.out.println("                 Merged path: "+coll.getOrderedNodes(coll.getFirstPath(path)));			
-			for(List<SDGEdge> relatedNodesEdges : path)
-			{
-				System.out.print("                    "+relatedNodesEdges.get(0).getSource() + " -");
-				for(int i = 0; i < relatedNodesEdges.size() - 1; i++)
-				{
-					System.out.print(relatedNodesEdges.get(i).getKind().name() + "/");
-				}
+		// ViolationPathCollector coll = new ViolationPathCollector(sdg);
+		// List<List<SDGEdge>> pathes = coll.getOrderedEdges(invNodes, source, sink);	
+		// List<List<List<SDGEdge>>> mergedPaths = coll.mergePaths(pathes);
+		// System.out.println("           Merged paths:");
+		// for(List<List<SDGEdge>> path : mergedPaths)
+		// {
+		// 	System.out.println("                 Merged path: "+coll.getOrderedNodes(coll.getFirstPath(path)));			
+		// 	for(List<SDGEdge> relatedNodesEdges : path)
+		// 	{
+		// 		System.out.print("                    "+relatedNodesEdges.get(0).getSource() + " -");
+		// 		for(int i = 0; i < relatedNodesEdges.size() - 1; i++)
+		// 		{
+		// 			System.out.print(relatedNodesEdges.get(i).getKind().name() + "/");
+		// 		}
 
-				System.out.println(relatedNodesEdges.get(relatedNodesEdges.size() - 1).getKind().name()+
-						"-> "+relatedNodesEdges.get(0).getTarget());
-			}
-		}
-		FileUtils.writeNewLine(reportFilePath, "           Ordered paths: "+pathes);
-		for(List<SDGEdge> path : pathes)
-		{
-			System.out.println("                 Ordered path: "+coll.getOrderedNodes(path));
-			System.out.println("                    "+path);
-			/*
-			for(SDGEdge edge : path)
-			{
-				System.out.println("                    "+edge.getSource() + " -"+edge.getKind().name()+"-> "+edge.getTarget());
-			}*/
-		}
+		// 		System.out.println(relatedNodesEdges.get(relatedNodesEdges.size() - 1).getKind().name()+
+		// 				"-> "+relatedNodesEdges.get(0).getTarget());
+		// 	}
+		// }
+		// FileUtils.writeNewLine(reportFilePath, "           Ordered paths: "+pathes);
+		// for(List<SDGEdge> path : pathes)
+		// {
+		// 	System.out.println("                 Ordered path: "+coll.getOrderedNodes(path));
+		// 	System.out.println("                    "+path);
+		// 	/*
+		// 	for(SDGEdge edge : path)
+		// 	{
+		// 		System.out.println("                    "+edge.getSource() + " -"+edge.getKind().name()+"-> "+edge.getTarget());
+		// 	}*/
+		// }
 	}
 
 	private static void printPath(String reportFilePath, Collection<SecurityNode> pathList, String sep) throws IOException {

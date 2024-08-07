@@ -1,0 +1,85 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ExecutionResult",
+            "request": "launch",
+            "mainClass": "execResult.ExecutionResult",
+            "projectName": "SemanticConflicts"
+        },
+        {
+            "type": "java",
+            "name": "LineVio",
+            "request": "launch",
+            "mainClass": "execResult.LineVio",
+            "projectName": "SemanticConflicts"
+        },
+        {
+            "type": "java",
+            "name": "EntryPoint",
+            "request": "launch",
+            "mainClass": "main.EntryPoint",
+            "projectName": "SemanticConflicts"
+        },
+        {
+            "type": "java",
+            "name": "JoanaInvocation",
+            "request": "launch",
+            "mainClass": "main.JoanaInvocation",
+            "projectName": "SemanticConflicts",
+            // "classPaths": [
+            //     "/Users/galileu/Documents/joana/SemanticConflicts/lib/new_inv.jar"
+            // ],
+            "args": [
+                "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/",
+                "/Users/galileu/joana/reports/druid/05168808c278c080c59c19e858d9471b316cd1f5/com/metamx/druid/loading/S3SegmentPusher",
+                "/Users/galileu/joana/sdgs/druid/05168808c278c080c59c19e858d9471b316cd1f5/com/metamx/druid/loading/S3SegmentPusher",
+                "2;05168808c278c080c59c19e858d9471b316cd1f5;Thu Jul 18 00:00:16  2024;/Users/galileu/mergedataset/druid/05168808c278c080c59c19e858d9471b316cd1f5/source/com/metamx/druid/loading/S3SegmentPusher/merge.java;com.metamx.druid.client.DataSegment com.metamx.druid.loading.S3SegmentPusher.push(File, DataSegment);439;[66, 118, 139, 110];[105, 125]",
+                "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/libs",
+                "ignoreExceptions=true",
+                "initialPrecision=4"
+            ]
+        },
+        // {
+        //     "type": "java",
+        //     "name": "JoanaInvocation",
+        //     "request": "launch",
+        //     "mainClass": "main.JoanaInvocation",
+        //     "projectName": "SemanticConflicts",
+        //     "args": [
+        //         "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/",
+        //         "/Users/galileu/Documents/joana/reports/Motivating/bf2222",
+        //         "/Users/galileu/Documents/joana/sdgs/Motivating/bf2222",
+        //         "37; bf2222; Fri Jul 18 04:55:50 BRT 2014; /Users/galileu/Documents/joana/downloads/Motivating/bf2222/original-without-dependencies/merge/learning/src/main/Main.java; void main.Main.main(java.lang.String[]);37; [12, 13, 17]; [15, 16, 18]",
+        //         "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/libs",
+        //         "ignoreExceptions=true",
+        //         "initialPrecision=4"
+        //     ]
+        // },
+        {
+            "type": "java",
+            "name": "TestJoanaInvocation",
+            "request": "launch",
+            "mainClass": "main.TestJoanaInvocation",
+            "projectName": "SemanticConflicts"
+        },
+        {
+            "type": "java",
+            "name": "FileUtils",
+            "request": "launch",
+            "mainClass": "util.FileUtils",
+            "projectName": "SemanticConflicts"
+        }
+    ]
+}

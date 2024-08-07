@@ -1,0 +1,5 @@
+Setting up analysis scope... (from file /Users/galileu/Documents/Doutorado/Pesquisa/JOANA/rsmbf/joana.contrib.lib/stubs/jSDG-stubs-jre1.5.jar) done.
+Creating class hierarchy... (18309 classes) done.
+done.
+Building system dependence graph... 
+	callgraph: 

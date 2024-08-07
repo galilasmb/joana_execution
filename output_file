@@ -1,0 +1,6 @@
+nohup: ignoring input
+Called joana - args: 1
+[]
+	Arg: arguments
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at main.JoanaInvocation.main(JoanaInvocation.java:949)

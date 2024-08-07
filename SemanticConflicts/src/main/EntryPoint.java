@@ -207,7 +207,7 @@ public class EntryPoint {
 		if(libPaths != null)
 		{
 			compArgs.add("-cp");
-			compArgs.add(FileUtils.getAllJarFiles(libPaths));
+			compArgs.add(FileUtils.getAllJarFilesStr(libPaths));
 		}
 		compArgs.addAll(compilePaths);
 		/*

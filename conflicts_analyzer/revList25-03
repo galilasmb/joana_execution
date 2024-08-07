@@ -1,0 +1,7 @@
+Activiti, a44b5_ca3f4, "/modules/activiti-engine/target/dependency"
+tachyon, 04c6c_b2ae1, "/core/target/dependency"
+voldemort, 2ac36_02420, "/lib"
+aws-sdk-java, 7ab10_257dd, "/target/dependency"
+mustache.java, 0fb12_39dd8, "/compiler/target/dependency"
+voldemort, 24c82_64c90, "/lib"
+voldemort, e0f18_d44ca, "/lib"
