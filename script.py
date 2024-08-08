@@ -388,7 +388,10 @@ def getContribs(row, ID):
 	
 	file_java = datasetPath+project+"/"+merge_commit+"/source/"+class_path+"/merge.java"
 
-	qtd_lines = max(max(convert_to_list(left_modification)), max(convert_to_list(right_modification)))
+	qtd_lines = max(
+		max(convert_to_list(left_modification)) if convert_to_list(left_modification) else 0,
+		max(convert_to_list(right_modification)) if convert_to_list(right_modification) else 0
+	)
 
 	contribs = "%s; %s; %s; %s; %s; %s; %s; %s" % (ID, merge_commit, DATE, file_java, method, str(qtd_lines+300), left_modification, right_modification)
 
