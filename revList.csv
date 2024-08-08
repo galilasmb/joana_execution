@@ -1,0 +1,2 @@
+project;merge commit;className;method;left modifications;has_build;left deletions;right modifications;right deletions
+webbit;74d2d2b87704d003acacb34e4ca8fb5f897b938f;org.webbitserver.netty.WebSocketClient; void org.webbitserver.netty.WebSocketClient.adjustPipelineToWebSocket(ChannelHandlerContext, MessageEvent, ChannelHandler, ChannelHandler);[260];TRUE;[];[262];[]
