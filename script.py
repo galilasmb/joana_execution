@@ -287,7 +287,7 @@ home_joana = "/home/joana_execution/"
 homePath = home_joana
 
 currentDir = home_joana
-datasetPath = home_joana+"downloads/"
+datasetPath = home_joana+"conflicts_analyzer/downloads/"
 libStr = home_joana+"libs/"
 project_path_joana = home_joana
 
@@ -390,7 +390,7 @@ def getContribs(row, ID):
 
 	qtd_lines = max(max(convert_to_list(left_modification)), max(convert_to_list(right_modification)))
 
-	contribs = "%s;%s;%s;%s;%s;%s;%s;%s" % (ID, merge_commit, DATE, file_java, method, str(qtd_lines+300), left_modification, right_modification)
+	contribs = "%s; %s; %s; %s; %s; %s; %s; %s" % (ID, merge_commit, DATE, file_java, method, str(qtd_lines+300), left_modification, right_modification)
 
 	# Imprimindo a saida
 	return contribs
