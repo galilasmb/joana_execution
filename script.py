@@ -142,13 +142,6 @@ def checkIfIsInYearRange(yearRange, revHasContrib, revContribs):
 			isInYearRange = ((startYear == "" or year >= int(startYear)) and (endYear == "" or year <= int(endYear)))
 	return isInYearRange
 
-def getHeapComplement(path):
-	if path[:27] == "/home/conflicts_analyzer/":
-		comp = "-Xms1024g -Xmx2048g"#"-Xms128g -Xmx192g"
-	else:
-		comp = "-Xms1024g -Xmx2048g" # "-Xms1g -Xmx2g" #"-Xms4m -Xmx8m"
-	return comp
-
 def runJoanaForSpecificRevs():
 	print "##########Executando###############"
 	import os
@@ -280,6 +273,14 @@ def main():
 				   			#run_joana(REV_GIT_PATH, REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapStr, "")
 
 
+def getHeapComplement(path):
+	print path[:27]
+	if path[:27] == "/home/joana_execution/":
+		comp = "-Xms1024g -Xmx2048g"#"-Xms128g -Xmx192g"
+	else:
+		comp = "-Xms2g -Xmx4g" # "-Xms1g -Xmx2g" #"-Xms4m -Xmx8m"
+	return comp
+
 #home_joana = "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/joana_execution/"
 home_joana = "/home/joana_execution/"
 
@@ -296,9 +297,6 @@ file_name_revList = homePath + "revList.csv"
 def runJoana():
 	print "##########Executando###############"
 	import os
-	#currentDir = os.getcwd()
-	
-	CA_PATH = currentDir + "conflicts_analyzer"
 	
 	heapStr = getHeapComplement(currentDir)
 	
@@ -335,7 +333,14 @@ def runJoana():
 			revStr = project+"/"+merge_commit
 			print "\n\nClass path:", class_path, class_name
 
-			git_path_generated = datasetPath+revStr +"/source/"+class_path
+			git_path_generated = ""
+			
+			print "\n\n\Realistic:"+class_path
+
+			if "realistic" not in class_path:
+				git_path_generated = datasetPath+revStr +"/source/"+class_path
+			else:
+				git_path_generated = datasetPath+revStr +"/"+class_path
 			
 			print "GIT PATH GENERATED:"+git_path_generated
 
@@ -344,7 +349,6 @@ def runJoana():
 			
 			PROJECT_PATH = datasetPath + "/" + revStr
 			print "Analisando projeto: ", PROJECT_PATH
-			
 			
 			REV_GIT_PATH = git_path_generated
 
@@ -386,7 +390,12 @@ def getContribs(row, ID):
 	left_modification = row[4]
 	right_modification = row[7]
 	
-	file_java = datasetPath+project+"/"+merge_commit+"/source/"+class_path+"/merge.java"
+	file_java = ""
+	
+	if "realistic" not in class_path:
+		file_java = datasetPath+project+"/"+merge_commit+"/source/"+class_path+"/merge.java"
+	else:
+		file_java = datasetPath+project+"/"+merge_commit+"/"+class_path+"/merge.java"
 
 	qtd_lines = max(
 		max(convert_to_list(left_modification)) if convert_to_list(left_modification) else 0,
@@ -422,9 +431,6 @@ def contrib():
 			ID = ID + 1
 
 
-# main()
-
-#runJoanaForSpecificRevs()
+print "\n\nExecuting with "+getHeapComplement(currentDir)+" of memory\n\n"
 
 runJoana()
-

@@ -1,3 +1,3 @@
-*.DS_Store
+*/.DS_Store
 conflicts_analyzer/downloads/*
 !conflicts_analyzer/downloads/Motivating/
