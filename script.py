@@ -363,7 +363,7 @@ def runJoana():
 			
 			print "\nGIT", REV_GIT_PATH, "\nREV_REPORTS", REV_REPORTS_PATH, "\nSDG", REV_SDGS_PATH, "\nRevContrib", revContribs, "\nHeapSTR", heapStr, "\nLibSTR", libStr
 			
-			run_joana("/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/joana_execution/", REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapStr, libStr)
+			run_joana(home_joana, REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapStr, libStr)
 
 			ID = ID + 1
 
