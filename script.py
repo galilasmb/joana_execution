@@ -91,12 +91,12 @@ def run_joana(REV_GIT_PATH, REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapSt
 	baseCmd += " \"" +libPaths + "\""
 	#print baseCmd
 	#ignoreExceptions=["true", "false"]
-	ignoreExceptions=["false"]
+	ignoreExceptions=["true"]
 	initialExceptionMsg = "ignoreExceptions="
 	initialPrecisionMsg = "initialPrecision="
 	precisions = ["TYPE_BASED", "INSTANCE_BASED","OBJECT_SENSITIVE", "N1_OBJECT_SENSITIVE", 
 		"UNLIMITED_OBJECT_SENSITIVE", "N1_CALL_STACK", "N2_CALL_STACK", "N3_CALL_STACK"]
-	precisionsIds = [4]#xrange(8)#[0,1,2,3,4,5,6,7]
+	precisionsIds = [3]#xrange(8)#[0,1,2,3,4,5,6,7]
 	if(os.path.exists(REV_REPORTS_PATH + "/executionSummary.csv")):
 		open(REV_REPORTS_PATH + "/executionSummary.csv","w").close()
 	for ignoreException in ignoreExceptions:
