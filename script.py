@@ -23,7 +23,7 @@ def runSubProcess(cmd, report_file):
 	t.daemon = True
 	t.start()
 	start_time = time.time()
-	timeout = 86400 #86400 seconds of a day
+	timeout = 172800 #86400 seconds = two days
 	sleep_time = 5 #5 seconds
 	seconds_passed = time.time() - start_time
 	remaining_time = timeout - seconds_passed
@@ -276,7 +276,7 @@ def main():
 def getHeapComplement(path):
 	print path[:27]
 	if path[:27] == "/home/joana_execution/":
-		comp = "-Xms1024g -Xmx2048g"#"-Xms128g -Xmx192g"
+		comp = "-Xms1024g -Xmx1536g"#"-Xms128g -Xmx192g"
 	else:
 		comp = "-Xms2g -Xmx4g" # "-Xms1g -Xmx2g" #"-Xms4m -Xmx8m"
 	return comp
