@@ -281,6 +281,11 @@ def getHeapComplement(path):
 		comp = "-Xms2g -Xmx4g" # "-Xms1g -Xmx2g" #"-Xms4m -Xmx8m"
 	return comp
 
+def extract_method_name(signature):
+    method_full_name = signature.split('(')[0]
+    method_name = method_full_name.split('.')[-1]
+    return method_name
+
 #home_joana = "/Users/galileu/Documents/Doutorado/Pesquisa/JOANA/joana_execution/"
 home_joana = "/home/joana_execution/"
 
@@ -362,12 +367,13 @@ def runJoana():
 			
 			print "\n\nREV ", revStr
 			
-			REV_REPORTS_PATH = PROJECT_REPORTS_PATH+ "/" +class_path+"/"+class_name+"/"+method
+			method_name = extract_method_name(method)
+			REV_REPORTS_PATH = PROJECT_REPORTS_PATH+ "/" +class_path+"/"+class_name+"/"+method_name
 			REV_SDGS_PATH = PROJECT_SDGS_PATH+ "/" +class_path+"/"+class_name
 			
 			print "\nGIT", REV_GIT_PATH, "\nREV_REPORTS", REV_REPORTS_PATH, "\nSDG", REV_SDGS_PATH, "\nRevContrib", revContribs, "\nHeapSTR", heapStr, "\nLibSTR", libStr
 			
-			run_joana(home_joana, REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapStr, libStr)
+			#run_joana(home_joana, REV_REPORTS_PATH, REV_SDGS_PATH, revContribs, heapStr, libStr)
 
 			ID = ID + 1
 
