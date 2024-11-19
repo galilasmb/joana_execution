@@ -362,7 +362,7 @@ def runJoana():
 			
 			print "\n\nREV ", revStr
 			
-			REV_REPORTS_PATH = PROJECT_REPORTS_PATH+ "/" +class_path+"/"+class_name
+			REV_REPORTS_PATH = PROJECT_REPORTS_PATH+ "/" +class_path+"/"+class_name+"/"+method
 			REV_SDGS_PATH = PROJECT_SDGS_PATH+ "/" +class_path+"/"+class_name
 			
 			print "\nGIT", REV_GIT_PATH, "\nREV_REPORTS", REV_REPORTS_PATH, "\nSDG", REV_SDGS_PATH, "\nRevContrib", revContribs, "\nHeapSTR", heapStr, "\nLibSTR", libStr
