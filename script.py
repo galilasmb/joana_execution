@@ -336,14 +336,14 @@ def runJoana():
 			right_modification = row[7]
 
 			revStr = project+"/"+merge_commit
-			print "\n\nClass path:", class_path, class_name
+			print "\n\nClass path:", class_path, "Classe:",class_name
 
 			git_path_generated = ""
 			
-			print "\n\n\Realistic:"+class_path
+			print "\n\nRealistic:"+class_path
 
 			if "realistic" not in class_path:
-				git_path_generated = datasetPath+revStr +"/source/"+class_path
+				git_path_generated = datasetPath+revStr +"/original-without-dependencies/merge/"+class_path
 			else:
 				git_path_generated = datasetPath+revStr +"/"+class_path
 			
@@ -352,7 +352,7 @@ def runJoana():
 			PROJECT_REPORTS_PATH = REPORTS_PATH + "/" + revStr
 			PROJECT_SDGS_PATH = SDGS_PATH + "/" + revStr
 			
-			PROJECT_PATH = datasetPath + "/" + revStr
+			PROJECT_PATH = datasetPath + revStr
 			print "Analisando projeto: ", PROJECT_PATH
 			
 			REV_GIT_PATH = git_path_generated
